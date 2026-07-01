@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Relov</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="css/components/navbar.css" />
+    <link rel="stylesheet" href="css/components/footer.css" />
+    <link rel="stylesheet" href="css/components/buttons.css" />
+    
+    <!-- Page Specific -->
+    <link rel="stylesheet" href="css/pages/auth.css" />
+</head>
+<body>
+
+    <!-- ======================================== -->
+    <!-- NAVBAR (Minimal) -->
+    <!-- ======================================== -->
+    <nav class="navbar" id="navbar">
+        <div class="container-custom flex items-center justify-between">
+            <a href="index.html" class="navbar-logo">
+                <span class="navbar-logo-icon">R</span>
+                Relov
+            </a>
+            
+            <div class="navbar-actions">
+                <a href="register.html" class="navbar-signup-btn">
+                    Create Account
+                    <i class="fas fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+            
+            <button class="navbar-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <div class="container-custom">
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="index.html" class="mobile-menu-link">Home</a>
+                <a href="marketplace.html" class="mobile-menu-link">Marketplace</a>
+                <a href="register.html" class="mobile-menu-signup">Create Account</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ======================================== -->
+    <!-- LOGIN FORM -->
+    <!-- ======================================== -->
+    <section class="auth-section">
+        <div class="container-custom">
+            <div class="auth-container">
+                
+                <!-- Header -->
+                <div class="auth-header">
+                    <div class="auth-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h1 class="auth-title">Welcome Back</h1>
+                    <p class="auth-subtitle">Sign in to continue your student marketplace journey</p>
+                </div>
+                
+                <!-- Social Login -->
+                <div class="social-login">
+                    <button class="social-btn google" onclick="socialLogin('google')">
+                        <i class="fab fa-google"></i>
+                        Continue with Google
+                    </button>
+                    <button class="social-btn microsoft" onclick="socialLogin('microsoft')">
+                        <i class="fab fa-microsoft"></i>
+                        Continue with Microsoft
+                    </button>
+                    <button class="social-btn apple" onclick="socialLogin('apple')">
+                        <i class="fab fa-apple"></i>
+                        Continue with Apple
+                    </button>
+                    
+                    <div class="divider">
+                        <span>or sign in with email</span>
+                    </div>
+                </div>
+                
+                <!-- Login Form -->
+                <form class="auth-form" id="loginForm" onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label class="form-label required">Email Address</label>
+                        <div class="input-icon-group">
+                            <i class="fas fa-envelope input-icon"></i>
+                            <input type="email" class="form-input" placeholder="student@university.edu" id="loginEmail" required />
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label required">Password</label>
+                        <div class="input-icon-group">
+                            <i class="fas fa-lock input-icon"></i>
+                            <input type="password" class="form-input" placeholder="Enter your password" id="loginPassword" required />
+                            <button type="button" class="password-toggle" onclick="togglePassword()">
+                                <i class="fas fa-eye" id="passwordIcon"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox" id="rememberMe" />
+                            <span>Remember me</span>
+                        </label>
+                        <a href="forgot-password.html" class="forgot-link">Forgot Password?</a>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary btn-full btn-lg" id="loginBtn">
+                        <span id="loginBtnText">Sign In</span>
+                        <i class="fas fa-arrow-right" id="loginBtnIcon"></i>
+                    </button>
+                </form>
+                
+                <!-- Sign Up Link -->
+                <div class="auth-footer">
+                    <p>Don't have an account? <a href="register.html">Create one now</a></p>
+                </div>
+                
+                <!-- Features -->
+                <div class="auth-features">
+                    <div class="auth-feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Verified student community</span>
+                    </div>
+                    <div class="auth-feature">
+                        <i class="fas fa-box"></i>
+                        <span>Trusted marketplace</span>
+                    </div>
+                    <div class="auth-feature">
+                        <i class="fas fa-hand-holding-heart"></i>
+                        <span>Safe transactions</span>
+                    </div>
+                </div>
+                
+                <!-- Demo Credentials (for testing) -->
+                <div class="demo-credentials">
+                    <p class="demo-title">🎯 Demo Credentials</p>
+                    <div class="demo-grid">
+                        <div class="demo-item" onclick="fillDemo('student@university.edu', 'password123')">
+                            <span class="demo-email">student@university.edu</span>
+                            <span class="demo-pass">password123</span>
+                            <span class="demo-click">Click to fill</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- FOOTER (Minimal) -->
+    <!-- ======================================== -->
+    <footer class="footer">
+        <div class="container-custom">
+            <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+                <p class="footer-copyright">
+                    © 2024 Relov. All rights reserved. Made with <span class="heart">❤️</span> for students.
+                </p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ======================================== -->
+    <!-- JAVASCRIPT -->
+    <!-- ======================================== -->
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+
+</body>
+</html>

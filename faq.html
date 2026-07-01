@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ - Relov</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="css/components/navbar.css" />
+    <link rel="stylesheet" href="css/components/footer.css" />
+    <link rel="stylesheet" href="css/components/cards.css" />
+    <link rel="stylesheet" href="css/components/buttons.css" />
+    
+    <!-- Page Specific -->
+    <link rel="stylesheet" href="css/pages/faq.css" />
+</head>
+<body>
+
+    <!-- ======================================== -->
+    <!-- NAVBAR -->
+    <!-- ======================================== -->
+    <nav class="navbar" id="navbar">
+        <div class="container-custom flex items-center justify-between">
+            <a href="index.html" class="navbar-logo">
+                <span class="navbar-logo-icon">R</span>
+                Relov
+            </a>
+            
+            <div class="navbar-links">
+                <a href="marketplace.html" class="navbar-link">Marketplace</a>
+                <a href="universities.html" class="navbar-link">Universities</a>
+                <a href="how-it-works.html" class="navbar-link">How It Works</a>
+                <a href="about.html" class="navbar-link">About</a>
+                <a href="faq.html" class="navbar-link active">FAQ</a>
+            </div>
+            
+            <div class="navbar-actions">
+                <button class="navbar-search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="login.html" class="navbar-login-btn">Login</a>
+                <a href="register.html" class="navbar-signup-btn">
+                    Sign Up
+                    <i class="fas fa-chevron-down text-xs"></i>
+                </a>
+            </div>
+            
+            <button class="navbar-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <div class="container-custom">
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="marketplace.html" class="mobile-menu-link">Marketplace</a>
+                <a href="universities.html" class="mobile-menu-link">Universities</a>
+                <a href="how-it-works.html" class="mobile-menu-link">How It Works</a>
+                <a href="about.html" class="mobile-menu-link">About</a>
+                <a href="faq.html" class="mobile-menu-link">FAQ</a>
+                <hr class="mobile-menu-divider" />
+                <a href="login.html" class="mobile-menu-link">Login</a>
+                <a href="register.html" class="mobile-menu-signup">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ======================================== -->
+    <!-- PAGE HEADER -->
+    <!-- ======================================== -->
+    <section class="faq-header">
+        <div class="container-custom">
+            <div class="header-content">
+                <span class="header-badge"><i class="fas fa-question-circle"></i> Help Center</span>
+                <h1 class="header-title">
+                    Frequently Asked <span class="highlight">Questions</span>
+                </h1>
+                <p class="header-subtitle">
+                    Find answers to the most common questions about Relov. Can't find what you're looking for? 
+                    <a href="contact.html">Contact us</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- CATEGORY FILTER -->
+    <!-- ======================================== -->
+    <section class="faq-categories">
+        <div class="container-custom">
+            <div class="category-tabs">
+                <button class="category-tab active" data-category="all" onclick="filterFAQs('all')">
+                    <i class="fas fa-list"></i>
+                    All Questions
+                </button>
+                <button class="category-tab" data-category="account" onclick="filterFAQs('account')">
+                    <i class="fas fa-user"></i>
+                    Account
+                </button>
+                <button class="category-tab" data-category="buying" onclick="filterFAQs('buying')">
+                    <i class="fas fa-shopping-bag"></i>
+                    Buying
+                </button>
+                <button class="category-tab" data-category="selling" onclick="filterFAQs('selling')">
+                    <i class="fas fa-tag"></i>
+                    Selling
+                </button>
+                <button class="category-tab" data-category="safety" onclick="filterFAQs('safety')">
+                    <i class="fas fa-shield-alt"></i>
+                    Safety
+                </button>
+                <button class="category-tab" data-category="university" onclick="filterFAQs('university')">
+                    <i class="fas fa-university"></i>
+                    University
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- FAQ CONTENT -->
+    <!-- ======================================== -->
+    <section class="faq-content">
+        <div class="container-custom">
+            <div class="faq-grid">
+
+                <!-- ============================================ -->
+                <!-- ACCOUNT CATEGORY -->
+                <!-- ============================================ -->
+                <div class="faq-category-section" data-category="account">
+                    <h2 class="category-title">
+                        <i class="fas fa-user"></i>
+                        Account & Registration
+                    </h2>
+
+                    <div class="faq-item" data-category="account">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>How do I create a Relov account?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Creating an account is easy! Just click the "Sign Up" button on the top right of any page. You'll need to provide:</p>
+                                <ul>
+                                    <li>Your full name</li>
+                                    <li>University email address</li>
+                                    <li>Phone number</li>
+                                    <li>A secure password</li>
+                                    <li>Your university and student ID</li>
+                                </ul>
+                                <p>Once you submit, you'll receive a verification email to confirm your account.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="account">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Do I need a university email to join?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Yes! We require a valid university email address (.edu.ng or your university's domain) to verify that you're a student. This helps us maintain a trusted community of verified students only.</p>
+                                <p>If your university isn't on our list yet, you can join the waitlist and we'll notify you when your university goes live.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="account">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>How does student verification work?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Student verification is our way of ensuring every user is a real student. The process includes:</p>
+                                <ul>
+                                    <li><strong>Email Verification:</strong> We send a confirmation link to your university email</li>
+                                    <li><strong>Student ID:</strong> You'll be asked to upload a photo of your student ID</li>
+                                    <li><strong>Identity Check:</strong> Our team reviews your information within 24 hours</li>
+                                </ul>
+                                <p>Once verified, you'll receive a "Verified" badge on your profile and unlock all features.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="account">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>What if I forgot my password?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>No worries! Click the "Forgot Password" link on the login page. We'll send you a password reset link to your registered email address. Follow the instructions to create a new password.</p>
+                                <p>If you don't receive the email, check your spam folder or contact our support team.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="account">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Can I change my email address?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Yes, you can update your email address in your account settings. However, you'll need to verify the new email address before it becomes active.</p>
+                                <p>Note that you must use a valid university email address to remain verified.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============================================ -->
+                <!-- BUYING CATEGORY -->
+                <!-- ============================================ -->
+                <div class="faq-category-section" data-category="buying">
+                    <h2 class="category-title">
+                        <i class="fas fa-shopping-bag"></i>
+                        Buying on Relov
+                    </h2>
+
+                    <div class="faq-item" data-category="buying">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>How do I find items to buy?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>You can find items in several ways:</p>
+                                <ul>
+                                    <li><strong>Browse:</strong> Explore categories like Furniture, Electronics, Books, Fashion, and more</li>
+                                    <li><strong>Search:</strong> Use the search bar to find specific items</li>
+                                    <li><strong>Filters:</strong> Narrow down results by price, condition, university, and category</li>
+                                    <li><strong>Wishlist:</strong> Save items you're interested in for later</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="buying">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>How do I contact a seller?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Each product listing has a "Chat with Seller" button. Click it to start a conversation. You can:</p>
+                                <ul>
+                                    <li>Ask questions about the item</li>
+                                    <li>Negotiate the price</li>
+                                    <li>Arrange a meet-up time and location</li>
+                                </ul>
+                                <p>All communication happens within Relov's secure messaging system. Your personal contact information stays private.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="buying">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>How do I make an offer on an item?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>On the product detail page, click the "Make Offer" button. You'll be able to:</p>
+                                <ul>
+                                    <li>Propose your offer price</li>
+                                    <li>Add a message to the seller explaining your offer</li>
+                                    <li>Submit your offer for the seller to review</li>
+                                </ul>
+                                <p>The seller can accept, decline, or counter your offer.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="buying">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>How do I meet the seller?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>We recommend meeting on campus in a safe, public location. Popular meet-up spots include:</p>
+                                <ul>
+                                    <li>Student Center</li>
+                                    <li>University Library</li>
+                                    <li>Main Campus Entrance</li>
+                                    <li>Designated pickup points</li>
+                                </ul>
+                                <p>Always bring a friend if possible and choose a well-lit, populated area during daylight hours.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="buying">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Can I return an item I bought?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Returns are handled between the buyer and seller. We recommend:</p>
+                                <ul>
+                                    <li>Inspecting the item carefully before purchase</li>
+                                    <li>Asking the seller about their return policy</li>
+                                    <li>Communicating any issues directly with the seller</li>
+                                </ul>
+                                <p>If you can't resolve an issue, contact our support team for assistance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============================================ -->
+                <!-- SELLING CATEGORY -->
+                <!-- ============================================ -->
+                <div class="faq-category-section" data-category="selling">
+                    <h2 class="category-title">
+                        <i class="fas fa-tag"></i>
+                        Selling on Relov
+                    </h2>
+
+                    <div class="faq-item" data-category="selling">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>How do I list an item for sale?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Listing an item is easy and free! Just click the "Sell" button and follow the steps:</p>
+                                <ol>
+                                    <li>Add photos of your item (up to 5)</li>
+                                    <li>Write a clear title and description</li>
+                                    <li>Select the category and condition</li>
+                                    <li>Set your price in Naira (₦)</li>
+                                    <li>Choose your meet-up location</li>
+                                    <li>Review and publish your listing</li>
+                                </ol>
+                                <p>Your listing will be live immediately and visible to all students at your university.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="selling">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>How much does it cost to sell on Relov?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p><strong>Nothing!</strong> Relov is completely free for students. We don't charge:</p>
+                                <ul>
+                                    <li>No listing fees</li>
+                                    <li>No commission on sales</li>
+                                    <li>No hidden charges</li>
+                                </ul>
+                                <p>We believe in helping students save and earn without taking a cut.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="selling">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>What items can I sell?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>You can sell almost anything! Popular categories include:</p>
+                                <ul>
+                                    <li><strong>Furniture:</strong> Chairs, tables, beds, bookshelves</li>
+                                    <li><strong>Electronics:</strong> Laptops, phones, headphones, gaming consoles</li>
+                                    <li><strong>Books:</strong> Textbooks, novels, study guides</li>
+                                    <li><strong>Fashion:</strong> Clothing, shoes, accessories</li>
+                                    <li><strong>Kitchen:</strong> Utensils, small appliances, dinnerware</li>
+                                    <li><strong>Services:</strong> Tutoring, photography, laundry, hair styling</li>
+                                </ul>
+                                <p>Please don't list prohibited items like weapons, illegal substances, or counterfeit goods.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="selling">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>What if my item doesn't sell?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Don't worry! Here are some tips to help your item sell:</p>
+                                <ul>
+                                    <li><strong>Great Photos:</strong> Take clear, well-lit photos from multiple angles</li>
+                                    <li><strong>Accurate Description:</strong> Be honest about the condition and include key details</li>
+                                    <li><strong>Competitive Price:</strong> Research similar items and price competitively</li>
+                                    <li><strong>Quick Response:</strong> Reply to messages promptly</li>
+                                </ul>
+                                <p>You can also edit your listing to adjust the price or description at any time.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="selling">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Can I edit or delete my listing?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Yes! You can manage your listings from your dashboard:</p>
+                                <ul>
+                                    <li><strong>Edit:</strong> Update price, description, photos, or availability</li>
+                                    <li><strong>Delete:</strong> Remove the listing if the item is no longer available</li>
+                                    <li><strong>Mark as Sold:</strong> Let buyers know the item has been sold</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============================================ -->
+                <!-- SAFETY CATEGORY -->
+                <!-- ============================================ -->
+                <div class="faq-category-section" data-category="safety">
+                    <h2 class="category-title">
+                        <i class="fas fa-shield-alt"></i>
+                        Safety & Trust
+                    </h2>
+
+                    <div class="faq-item" data-category="safety">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Is Relov safe to use?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Yes! Relov is designed with safety as our top priority. Here's what we do:</p>
+                                <ul>
+                                    <li><strong>Student Verification:</strong> Every user must verify their student identity</li>
+                                    <li><strong>Secure Messaging:</strong> All communication happens within our platform</li>
+                                    <li><strong>Campus Meetups:</strong> We encourage public, on-campus meetings</li>
+                                    <li><strong>Rating System:</strong> See reviews from other students</li>
+                                    <li><strong>24/7 Monitoring:</strong> Our team monitors for suspicious activity</li>
+                                    <li><strong>Report Feature:</strong> Easily report any issues</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="safety">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>How do I report a suspicious listing?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>If you see a listing that seems suspicious, you can report it by:</p>
+                                <ol>
+                                    <li>Clicking the "Report" button on the product detail page</li>
+                                    <li>Selecting the reason for reporting</li>
+                                    <li>Adding any additional details</li>
+                                </ol>
+                                <p>Our team will review the report within 24 hours and take appropriate action.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="safety">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>How do I stay safe when meeting a seller?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Follow these safety tips for a secure meet-up:</p>
+                                <ul>
+                                    <li><strong>Meet in Public:</strong> Choose a well-lit, populated location on campus</li>
+                                    <li><strong>Bring a Friend:</strong> Don't go alone if possible</li>
+                                    <li><strong>Daylight Hours:</strong> Schedule meetups during the day</li>
+                                    <li><strong>Trust Your Instincts:</strong> If something feels off, cancel the meetup</li>
+                                    <li><strong>Inspect the Item:</strong> Check the item before paying</li>
+                                    <li><strong>Use Cash or Transfer:</strong> Bring exact change or use bank transfer</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="safety">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>What happens if I have a dispute with a seller?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>If you have a dispute:</p>
+                                <ol>
+                                    <li>Try to resolve it directly with the other party</li>
+                                    <li>If that doesn't work, contact our support team</li>
+                                    <li>We'll review the situation and help mediate</li>
+                                </ol>
+                                <p>We take all disputes seriously and will work to find a fair resolution.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============================================ -->
+                <!-- UNIVERSITY CATEGORY -->
+                <!-- ============================================ -->
+                <div class="faq-category-section" data-category="university">
+                    <h2 class="category-title">
+                        <i class="fas fa-university"></i>
+                        University & Community
+                    </h2>
+
+                    <div class="faq-item" data-category="university">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Which universities are on Relov?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Currently, <strong>Pan-Atlantic University</strong> is live on Relov. We're expanding to more universities soon!</p>
+                                <p><strong>Coming Soon:</strong></p>
+                                <ul>
+                                    <li>Covenant University</li>
+                                    <li>Babcock University</li>
+                                    <li>Lead City University</li>
+                                    <li>Afe Babalola University (ABUAD)</li>
+                                    <li>University of Lagos (UNILAG)</li>
+                                    <li>Obafemi Awolowo University (OAU)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="university">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>How can I get my university on Relov?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>We're always looking to expand to new universities! Here's what you can do:</p>
+                                <ul>
+                                    <li><strong>Join the Waitlist:</strong> Sign up on our universities page</li>
+                                    <li><strong>Spread the Word:</strong> Tell other students about Relov</li>
+                                    <li><strong>Become an Ambassador:</strong> Help us launch at your university</li>
+                                </ul>
+                                <p>Once we have enough interest, we'll prioritize your university for launch.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="university">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Can I buy from other universities?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Currently, Relov is designed for on-campus meetups, so you can only buy and sell within your university community.</p>
+                                <p>However, we're exploring cross-university features for the future. Stay tuned!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="university">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>How do I become a campus ambassador?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>We're always looking for passionate students to help grow Relov on campus! As an ambassador, you'll:</p>
+                                <ul>
+                                    <li>Promote Relov to fellow students</li>
+                                    <li>Help organize campus events</li>
+                                    <li>Get exclusive perks and rewards</li>
+                                    <li>Build your leadership experience</li>
+                                </ul>
+                                <p>Contact us at <a href="mailto:ambassadors@relov.com">ambassadors@relov.com</a> to apply!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- STILL HAVE QUESTIONS -->
+    <!-- ======================================== -->
+    <section class="still-have-questions">
+        <div class="container-custom">
+            <div class="questions-card">
+                <div class="questions-icon">
+                    <i class="fas fa-comment-dots"></i>
+                </div>
+                <h2>Still Have Questions?</h2>
+                <p>We're here to help! Reach out to our support team and we'll get back to you within 24 hours.</p>
+                <div class="questions-actions">
+                    <a href="contact.html" class="btn-primary">
+                        <i class="fas fa-envelope"></i>
+                        Contact Us
+                    </a>
+                    <a href="mailto:support@relov.com" class="btn-outline">
+                        <i class="fas fa-envelope"></i>
+                        support@relov.com
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- CTA SECTION -->
+    <!-- ======================================== -->
+    <section class="cta-section">
+        <div class="bg-pattern"></div>
+        <div class="container-custom relative">
+            <div class="cta-content">
+                <span class="cta-badge">Join Us</span>
+                <h2 class="cta-title">Ready to Get <span class="highlight">Started?</span></h2>
+                <p class="cta-subtitle">
+                    Join thousands of students already saving and earning on Relov.
+                </p>
+                <div class="cta-buttons">
+                    <a href="register.html" class="btn-white btn-lg group">
+                        Create Your Account
+                        <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 smooth"></i>
+                    </a>
+                    <a href="marketplace.html" class="btn-outline-white btn-lg">
+                        Browse Marketplace
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- FOOTER -->
+    <!-- ======================================== -->
+    <footer class="footer">
+        <div class="container-custom">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <span class="footer-logo-icon">R</span>
+                        Relov
+                    </a>
+                    <p class="footer-tagline">Things Worth Loving Again.</p>
+                    <p class="footer-description">Student-only marketplace for trusted buying and selling.</p>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="marketplace.html">Marketplace</a></li>
+                        <li><a href="universities.html">Universities</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="help.html">Help Center</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="report.html">Report Issue</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Get in Touch</h4>
+                    <ul class="footer-links">
+                        <li class="footer-contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>support@relov.com</span>
+                        </li>
+                        <li class="footer-contact-item">
+                            <i class="fas fa-map-pin"></i>
+                            <span>Lagos, Nigeria</span>
+                        </li>
+                        <li class="footer-contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+234 (800) RELOV-01</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2024 Relov. All rights reserved. Made with <span class="heart">❤️</span> for Nigerian students.
+                </p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ======================================== -->
+    <!-- JAVASCRIPT -->
+    <!-- ======================================== -->
+    <script src="js/main.js"></script>
+    <script src="js/faq.js"></script>
+
+</body>
+</html>

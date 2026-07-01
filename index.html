@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Relov - Things Worth Loving Again</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="css/components/navbar.css" />
+    <link rel="stylesheet" href="css/components/footer.css" />
+    <link rel="stylesheet" href="css/components/cards.css" />
+    <link rel="stylesheet" href="css/components/buttons.css" />
+    
+    <!-- Page Specific -->
+    <link rel="stylesheet" href="css/pages/home.css" />
+</head>
+<body>
+
+    <!-- ======================================== -->
+    <!-- NAVBAR -->
+    <!-- ======================================== -->
+    <nav class="navbar" id="navbar">
+        <div class="container-custom flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="navbar-logo">
+                <span class="navbar-logo-icon">R</span>
+                Relov
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <div class="navbar-links">
+                <a href="marketplace.html" class="navbar-link">Marketplace</a>
+                <a href="universities.html" class="navbar-link">Universities</a>
+                <a href="how-it-works.html" class="navbar-link">How It Works</a>
+                <a href="faq.html" class="navbar-link">FAQ</a>
+            </div>
+            
+            <!-- Desktop Actions -->
+            <div class="navbar-actions">
+                <button class="navbar-search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="login.html" class="navbar-login-btn">Login</a>
+                <a href="register.html" class="navbar-signup-btn">
+                    Sign Up
+                    <i class="fas fa-chevron-down text-xs"></i>
+                </a>
+            </div>
+            
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="container-custom">
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="marketplace.html" class="mobile-menu-link">Marketplace</a>
+                <a href="universities.html" class="mobile-menu-link">Universities</a>
+                <a href="how-it-works.html" class="mobile-menu-link">How It Works</a>
+                <a href="faq.html" class="mobile-menu-link">FAQ</a>
+                <hr class="mobile-menu-divider" />
+                <a href="login.html" class="mobile-menu-link">Login</a>
+                <a href="register.html" class="mobile-menu-signup">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ======================================== -->
+    <!-- HERO SECTION -->
+    <!-- ======================================== -->
+    <section class="hero-section bg-grid" id="hero">
+        <!-- Floating Background Elements -->
+        <div class="hero-floating-elements">
+            <div class="hero-float-element w-32 h-32 top-20 left-10 animate-float" style="animation-delay: 0s;"></div>
+            <div class="hero-float-element w-24 h-24 top-40 right-20 animate-float" style="animation-delay: 1s;"></div>
+            <div class="hero-float-element w-40 h-40 bottom-20 left-1/4 animate-float" style="animation-delay: 2s;"></div>
+            <div class="hero-float-element w-28 h-28 bottom-40 right-1/3 animate-float" style="animation-delay: 0.5s;"></div>
+            <div class="hero-float-element w-20 h-20 top-1/2 left-1/2 animate-float" style="animation-delay: 1.5s;"></div>
+        </div>
+        
+        <div class="container-custom relative z-10 py-12">
+            <div class="max-w-4xl mx-auto text-center animate-fade-in-up">
+                <!-- Trust Badge -->
+                <div class="hero-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Trusted by 50,000+ students</span>
+                </div>
+                
+                <!-- Heading -->
+                <h1 class="hero-title">
+                    Things Worth
+                    <span class="highlight">Loving Again.</span>
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Buy and sell trusted pre-owned items within your university community.
+                    Join thousands of students already saving and earning.
+                </p>
+                
+                <!-- CTA Buttons -->
+                <div class="hero-cta-group">
+                    <a href="marketplace.html" class="btn-primary btn-lg group">
+                        Browse Marketplace
+                        <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 smooth"></i>
+                    </a>
+                    <a href="sell.html" class="btn-outline btn-lg">
+                        Start Selling
+                    </a>
+                </div>
+                
+                <!-- Social Proof -->
+                <div class="hero-social-proof">
+                    <div class="hero-avatars">
+                        <div class="hero-avatar"></div>
+                        <div class="hero-avatar"></div>
+                        <div class="hero-avatar"></div>
+                        <div class="hero-avatar"></div>
+                        <div class="hero-avatar bg-gradient-to-br from-green-300 to-green-500 flex items-center justify-center text-white text-xs font-bold">+2k</div>
+                    </div>
+                    <div>
+                        <div class="hero-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="hero-stats-text">Loved by 5,000+ students</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- STATS SECTION -->
+    <!-- ======================================== -->
+    <section class="stats-section" id="stats">
+        <div class="container-custom">
+            <div class="stats-grid">
+                <div>
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number">50,000+</div>
+                    <div class="stat-label">Students</div>
+                </div>
+                <div>
+                    <div class="stat-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Universities</div>
+                </div>
+                <div>
+                    <div class="stat-icon">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <div class="stat-number">20,000+</div>
+                    <div class="stat-label">Listings</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- HOW IT WORKS -->
+    <!-- ======================================== -->
+    <section class="how-it-works-section" id="how-it-works">
+        <div class="container-custom">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">How Relov Works</h2>
+                <p class="text-lg text-slate-600">Four simple steps to start buying and selling within your campus community.</p>
+            </div>
+            
+            <div class="how-it-works-grid">
+                <!-- Step 1 -->
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">📝</div>
+                    <h3 class="step-title">Create Account</h3>
+                    <p class="step-description">Sign up with your university email and join the community.</p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">✅</div>
+                    <h3 class="step-title">Verify Identity</h3>
+                    <p class="step-description">Get verified as a student to unlock all features.</p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">🔄</div>
+                    <h3 class="step-title">Browse or Sell</h3>
+                    <p class="step-description">List your items or find great deals from students.</p>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">📍</div>
+                    <h3 class="step-title">Meet Safely</h3>
+                    <p class="step-description">Connect and arrange safe meet-ups on campus.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- FEATURED CATEGORIES -->
+    <!-- ======================================== -->
+    <section class="categories-section" id="categories">
+        <div class="container-custom">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Featured Categories</h2>
+                <p class="text-lg text-slate-600">Find exactly what you need across these popular categories.</p>
+            </div>
+            
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-card-icon">🛋️</div>
+                    <h4 class="category-card-title">Furniture</h4>
+                    <p class="category-card-count">2,341 items</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-card-icon">💻</div>
+                    <h4 class="category-card-title">Electronics</h4>
+                    <p class="category-card-count">1,892 items</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-card-icon">📚</div>
+                    <h4 class="category-card-title">Books</h4>
+                    <p class="category-card-count">3,456 items</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-card-icon">👗</div>
+                    <h4 class="category-card-title">Fashion</h4>
+                    <p class="category-card-count">1,234 items</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-card-icon">🍳</div>
+                    <h4 class="category-card-title">Kitchen</h4>
+                    <p class="category-card-count">876 items</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-card-icon">🛏️</div>
+                    <h4 class="category-card-title">Room Essentials</h4>
+                    <p class="category-card-count">654 items</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-card-icon">💼</div>
+                    <h4 class="category-card-title">Services</h4>
+                    <p class="category-card-count">432 items</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-card-icon">🍕</div>
+                    <h4 class="category-card-title">Food</h4>
+                    <p class="category-card-count">321 items</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- POPULAR LISTINGS -->
+    <!-- ======================================== -->
+    <section class="listings-section" id="popular-listings">
+        <div class="container-custom">
+            <div class="listings-header">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Popular Listings</h2>
+                    <p class="text-lg text-slate-600 mt-2">What students are loving right now</p>
+                </div>
+                <a href="marketplace.html" class="text-primary font-medium hover:underline inline-flex items-center gap-2 smooth">
+                    View All
+                    <i class="fas fa-arrow-right text-sm"></i>
+                </a>
+            </div>
+            
+            <div class="listings-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-card-image bg-gradient-to-br from-blue-100 to-blue-200">
+                        🪑
+                        <button class="product-card-heart">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-header">
+                            <h3 class="product-card-title">Ergonomic Chair</h3>
+                            <span class="product-card-time">2 hrs ago</span>
+                        </div>
+                        <p class="product-card-description">Like new, barely used</p>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$45</span>
+                            <span class="product-card-location">
+                                <i class="fas fa-map-pin"></i> Main Campus
+                            </span>
+                        </div>
+                        <div class="product-card-seller">
+                            <div class="product-card-avatar bg-green-200 text-green-700">JD</div>
+                            <span class="product-card-seller-name">John D.</span>
+                            <span class="product-card-badge">Verified</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-card-image bg-gradient-to-br from-purple-100 to-purple-200">
+                        📚
+                        <button class="product-card-heart">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-header">
+                            <h3 class="product-card-title">Textbook Bundle</h3>
+                            <span class="product-card-time">5 hrs ago</span>
+                        </div>
+                        <p class="product-card-description">Calculus + Physics set</p>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$80</span>
+                            <span class="product-card-location">
+                                <i class="fas fa-map-pin"></i> Science Bldg
+                            </span>
+                        </div>
+                        <div class="product-card-seller">
+                            <div class="product-card-avatar bg-pink-200 text-pink-700">SM</div>
+                            <span class="product-card-seller-name">Sarah M.</span>
+                            <span class="product-card-badge">Verified</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-card-image bg-gradient-to-br from-amber-100 to-amber-200">
+                        🎮
+                        <button class="product-card-heart">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-header">
+                            <h3 class="product-card-title">Gaming Console</h3>
+                            <span class="product-card-time">1 day ago</span>
+                        </div>
+                        <p class="product-card-description">PS5 + 2 controllers</p>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$350</span>
+                            <span class="product-card-location">
+                                <i class="fas fa-map-pin"></i> Dorm 4B
+                            </span>
+                        </div>
+                        <div class="product-card-seller">
+                            <div class="product-card-avatar bg-blue-200 text-blue-700">AC</div>
+                            <span class="product-card-seller-name">Alex C.</span>
+                            <span class="product-card-badge">Verified</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-card-image bg-gradient-to-br from-emerald-100 to-emerald-200">
+                        🚲
+                        <button class="product-card-heart">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-header">
+                            <h3 class="product-card-title">Mountain Bike</h3>
+                            <span class="product-card-time">2 days ago</span>
+                        </div>
+                        <p class="product-card-description">New tires, great condition</p>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$180</span>
+                            <span class="product-card-location">
+                                <i class="fas fa-map-pin"></i> Bike Rack
+                            </span>
+                        </div>
+                        <div class="product-card-seller">
+                            <div class="product-card-avatar bg-orange-200 text-orange-700">MJ</div>
+                            <span class="product-card-seller-name">Mike J.</span>
+                            <span class="product-card-badge">Verified</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- TESTIMONIALS -->
+    <!-- ======================================== -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container-custom">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">What Students Say</h2>
+                <p class="text-lg text-slate-600">Join thousands of students who found great deals and made extra money.</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Relov helped me furnish my entire dorm room for under $200. Everything was in great condition!"</p>
+                    <div>
+                        <p class="testimonial-author">Sarah Johnson</p>
+                        <p class="testimonial-uni">UC Berkeley</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"I sold my textbooks and electronics to fund spring break. The verification made me feel safe."</p>
+                    <div>
+                        <p class="testimonial-author">Michael Chen</p>
+                        <p class="testimonial-uni">NYU</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"As an international student, Relov was a lifesaver. Found furniture, a bike, and made friends!"</p>
+                    <div>
+                        <p class="testimonial-author">Emily Rodriguez</p>
+                        <p class="testimonial-uni">UT Austin</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- FAQ SECTION -->
+    <!-- ======================================== -->
+    <section class="faq-section" id="faq">
+        <div class="container-custom">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <p class="text-lg text-slate-600">Everything you need to know about Relov.</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <button class="faq-question">
+                        <span>How does student verification work?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Students verify their identity by providing their university email, student ID, and a photo. We verify this information within 24 hours. Only verified students can list items for sale.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <button class="faq-question">
+                        <span>Is it safe to buy and sell on Relov?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes! All users are verified students, and we encourage meet-ups on campus. We also have a rating system and dispute resolution process to ensure safety.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <button class="faq-question">
+                        <span>How much does it cost to use Relov?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Relov is completely free for students! We don't charge any listing fees or take a percentage of your sales. We just want to help students save money.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <button class="faq-question">
+                        <span>What items can I sell on Relov?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            You can sell furniture, electronics, textbooks, clothing, kitchen items, and more! You can also offer services like tutoring, photography, laundry, and hair styling.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- CTA SECTION -->
+    <!-- ======================================== -->
+    <section class="cta-section" id="cta">
+        <div class="bg-pattern"></div>
+        <div class="container-custom relative">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Join the Community?</h2>
+                <p class="cta-subtitle">Start buying, selling, and saving today.</p>
+                <div class="cta-buttons">
+                    <a href="register.html" class="btn-white btn-lg group">
+                        Get Started Free
+                        <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 smooth"></i>
+                    </a>
+                    <a href="about.html" class="btn-outline-white btn-lg">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- FOOTER -->
+    <!-- ======================================== -->
+    <footer class="footer">
+        <div class="container-custom">
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <span class="footer-logo-icon">R</span>
+                        Relov
+                    </a>
+                    <p class="footer-tagline">Things Worth Loving Again.</p>
+                    <p class="footer-description">Student-only marketplace for trusted buying and selling.</p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="marketplace.html">Marketplace</a></li>
+                        <li><a href="universities.html">Universities</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Support -->
+                <div>
+                    <h4 class="footer-heading">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="help.html">Help Center</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="report.html">Report Issue</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h4 class="footer-heading">Get in Touch</h4>
+                    <ul class="footer-links">
+                        <li class="footer-contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>support@relov.com</span>
+                        </li>
+                        <li class="footer-contact-item">
+                            <i class="fas fa-map-pin"></i>
+                            <span>Student communities nationwide</span>
+                        </li>
+                        <li class="footer-contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (800) RELOV-01</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom -->
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2024 Relov. All rights reserved. Made with <span class="heart">❤️</span> for students.
+                </p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ======================================== -->
+    <!-- JAVASCRIPT -->
+    <!-- ======================================== -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>

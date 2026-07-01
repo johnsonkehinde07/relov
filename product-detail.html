@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Detail - Relov</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="css/components/navbar.css" />
+    <link rel="stylesheet" href="css/components/footer.css" />
+    <link rel="stylesheet" href="css/components/cards.css" />
+    <link rel="stylesheet" href="css/components/buttons.css" />
+    
+    <!-- Page Specific -->
+    <link rel="stylesheet" href="css/pages/product-detail.css" />
+</head>
+<body>
+
+    <!-- ======================================== -->
+    <!-- NAVBAR -->
+    <!-- ======================================== -->
+    <nav class="navbar" id="navbar">
+        <div class="container-custom flex items-center justify-between">
+            <a href="index.html" class="navbar-logo">
+                <span class="navbar-logo-icon">R</span>
+                Relov
+            </a>
+            
+            <div class="navbar-links">
+                <a href="marketplace.html" class="navbar-link active">Marketplace</a>
+                <a href="universities.html" class="navbar-link">Universities</a>
+                <a href="how-it-works.html" class="navbar-link">How It Works</a>
+                <a href="about.html" class="navbar-link">About</a>
+                <a href="faq.html" class="navbar-link">FAQ</a>
+            </div>
+            
+            <div class="navbar-actions">
+                <button class="navbar-search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="login.html" class="navbar-login-btn">Login</a>
+                <a href="register.html" class="navbar-signup-btn">
+                    Sign Up
+                    <i class="fas fa-chevron-down text-xs"></i>
+                </a>
+            </div>
+            
+            <button class="navbar-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <div class="container-custom">
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="marketplace.html" class="mobile-menu-link">Marketplace</a>
+                <a href="universities.html" class="mobile-menu-link">Universities</a>
+                <a href="how-it-works.html" class="mobile-menu-link">How It Works</a>
+                <a href="about.html" class="mobile-menu-link">About</a>
+                <a href="faq.html" class="mobile-menu-link">FAQ</a>
+                <hr class="mobile-menu-divider" />
+                <a href="login.html" class="mobile-menu-link">Login</a>
+                <a href="register.html" class="mobile-menu-signup">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ======================================== -->
+    <!-- BREADCRUMB -->
+    <!-- ======================================== -->
+    <div class="breadcrumb">
+        <div class="container-custom">
+            <a href="index.html">Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <a href="marketplace.html">Marketplace</a>
+            <i class="fas fa-chevron-right"></i>
+            <span id="breadcrumbProduct">Product</span>
+        </div>
+    </div>
+
+
+    <!-- ======================================== -->
+    <!-- PRODUCT DETAIL -->
+    <!-- ======================================== -->
+    <section class="product-detail">
+        <div class="container-custom">
+            <div class="product-detail-grid">
+                
+                <!-- ===== LEFT: IMAGE GALLERY ===== -->
+                <div class="product-gallery">
+                    <div class="main-image" id="mainImage">
+                        <span class="main-image-emoji" id="productEmoji">🪑</span>
+                        <button class="gallery-nav prev" onclick="changeImage(-1)">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="gallery-nav next" onclick="changeImage(1)">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <button class="wishlist-btn" onclick="toggleWishlist()">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <span class="badge-sold" id="soldBadge" style="display:none;">Sold</span>
+                        <span class="badge-featured" id="featuredBadge" style="display:none;">Featured</span>
+                    </div>
+                    <div class="thumbnail-grid" id="thumbnailGrid">
+                        <div class="thumbnail active" onclick="setImage(0)">
+                            <span>🪑</span>
+                        </div>
+                        <div class="thumbnail" onclick="setImage(1)">
+                            <span>🪑</span>
+                        </div>
+                        <div class="thumbnail" onclick="setImage(2)">
+                            <span>🪑</span>
+                        </div>
+                        <div class="thumbnail" onclick="setImage(3)">
+                            <span>🪑</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ===== RIGHT: PRODUCT INFO ===== -->
+                <div class="product-info">
+                    <div class="product-header">
+                        <div class="product-category" id="productCategory">Furniture</div>
+                        <h1 class="product-title" id="productTitle">Ergonomic Desk Chair</h1>
+                        <div class="product-meta">
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span class="rating-count">(24 reviews)</span>
+                            </div>
+                            <span class="product-condition" id="productCondition">Like New</span>
+                        </div>
+                    </div>
+                    
+                    <div class="product-price" id="productPrice">$45</div>
+                    
+                    <div class="product-description">
+                        <h3>Description</h3>
+                        <p id="productDescription">
+                            Like new, barely used. Great for long study sessions. Ergonomic design with lumbar support.
+                        </p>
+                    </div>
+                    
+                    <div class="product-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Condition</span>
+                            <span class="detail-value" id="detailCondition">Like New</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Category</span>
+                            <span class="detail-value" id="detailCategory">Furniture</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Listed</span>
+                            <span class="detail-value" id="detailListed">2 hours ago</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Location</span>
+                            <span class="detail-value" id="detailLocation">Main Campus</span>
+                        </div>
+                    </div>
+                    
+                    <div class="product-actions">
+                        <button class="btn-primary btn-lg btn-full" onclick="contactSeller()">
+                            <i class="fas fa-comment"></i>
+                            Chat with Seller
+                        </button>
+                        <button class="btn-secondary btn-lg btn-full" onclick="makeOffer()">
+                            <i class="fas fa-hand-holding-usd"></i>
+                            Make Offer
+                        </button>
+                        <div class="action-buttons">
+                            <button class="action-btn" onclick="shareProduct()">
+                                <i class="fas fa-share-alt"></i>
+                                Share
+                            </button>
+                            <button class="action-btn" onclick="reportProduct()">
+                                <i class="fas fa-flag"></i>
+                                Report
+                            </button>
+                            <button class="action-btn" onclick="saveProduct()">
+                                <i class="fas fa-bookmark"></i>
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- SELLER PROFILE -->
+    <!-- ======================================== -->
+    <section class="seller-section">
+        <div class="container-custom">
+            <div class="seller-card">
+                <div class="seller-header">
+                    <div class="seller-avatar" id="sellerAvatar">JD</div>
+                    <div class="seller-info">
+                        <h3 class="seller-name" id="sellerName">John D.</h3>
+                        <div class="seller-badges">
+                            <span class="badge-verified"><i class="fas fa-check-circle"></i> Verified Student</span>
+                            <span class="badge-rating"><i class="fas fa-star"></i> 4.8 (24 reviews)</span>
+                        </div>
+                        <p class="seller-meta">
+                            <span><i class="fas fa-calendar"></i> Member since 2023</span>
+                            <span><i class="fas fa-box"></i> 12 items sold</span>
+                        </p>
+                    </div>
+                    <button class="btn-primary" onclick="contactSeller()">
+                        <i class="fas fa-comment"></i>
+                        Contact
+                    </button>
+                </div>
+                
+                <div class="seller-reviews">
+                    <h4>Recent Reviews</h4>
+                    <div class="review-item">
+                        <div class="review-header">
+                            <span class="reviewer">Sarah M.</span>
+                            <div class="review-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="review-date">2 weeks ago</span>
+                        </div>
+                        <p class="review-text">Great seller! The chair was exactly as described and in perfect condition.</p>
+                    </div>
+                    <div class="review-item">
+                        <div class="review-header">
+                            <span class="reviewer">Mike J.</span>
+                            <div class="review-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="review-date">1 month ago</span>
+                        </div>
+                        <p class="review-text">Very responsive and easy to communicate with. Would buy from again!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- RELATED PRODUCTS -->
+    <!-- ======================================== -->
+    <section class="related-section">
+        <div class="container-custom">
+            <div class="related-header">
+                <h2>Related Products</h2>
+                <a href="marketplace.html" class="view-all-link">
+                    View All
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="related-grid" id="relatedProducts">
+                <!-- Related products will be rendered by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- FOOTER -->
+    <!-- ======================================== -->
+    <footer class="footer">
+        <div class="container-custom">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <span class="footer-logo-icon">R</span>
+                        Relov
+                    </a>
+                    <p class="footer-tagline">Things Worth Loving Again.</p>
+                    <p class="footer-description">Student-only marketplace for trusted buying and selling.</p>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="marketplace.html">Marketplace</a></li>
+                        <li><a href="universities.html">Universities</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="help.html">Help Center</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="report.html">Report Issue</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Get in Touch</h4>
+                    <ul class="footer-links">
+                        <li class="footer-contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>support@relov.com</span>
+                        </li>
+                        <li class="footer-contact-item">
+                            <i class="fas fa-map-pin"></i>
+                            <span>Student communities nationwide</span>
+                        </li>
+                        <li class="footer-contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (800) RELOV-01</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2024 Relov. All rights reserved. Made with <span class="heart">❤️</span> for students.
+                </p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ======================================== -->
+    <!-- OFFER MODAL -->
+    <!-- ======================================== -->
+    <div class="modal" id="offerModal">
+        <div class="modal-overlay" onclick="closeModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 class="modal-title">Make an Offer</h2>
+            <p class="modal-subtitle">Propose a price for this item</p>
+            
+            <form id="offerForm" onsubmit="submitOffer(event)">
+                <div class="form-group">
+                    <label class="form-label">Your Offer Price</label>
+                    <div class="price-input-group">
+                        <span class="price-currency">$</span>
+                        <input type="number" class="form-input" placeholder="Enter amount" id="offerPrice" required />
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Message (Optional)</label>
+                    <textarea class="form-textarea" placeholder="Add a message to the seller..." id="offerMessage"></textarea>
+                </div>
+                
+                <button type="submit" class="btn-primary btn-full btn-lg">
+                    Submit Offer
+                </button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- ======================================== -->
+    <!-- JAVASCRIPT -->
+    <!-- ======================================== -->
+    <script src="js/main.js"></script>
+    <script src="js/product-detail.js"></script>
+
+</body>
+</html>

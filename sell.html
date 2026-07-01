@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sell on Relov</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="css/components/navbar.css" />
+    <link rel="stylesheet" href="css/components/footer.css" />
+    <link rel="stylesheet" href="css/components/cards.css" />
+    <link rel="stylesheet" href="css/components/buttons.css" />
+    
+    <!-- Page Specific -->
+    <link rel="stylesheet" href="css/pages/sell.css" />
+</head>
+<body>
+
+    <!-- ======================================== -->
+    <!-- NAVBAR -->
+    <!-- ======================================== -->
+    <nav class="navbar" id="navbar">
+        <div class="container-custom flex items-center justify-between">
+            <a href="index.html" class="navbar-logo">
+                <span class="navbar-logo-icon">R</span>
+                Relov
+            </a>
+            
+            <div class="navbar-links">
+                <a href="marketplace.html" class="navbar-link">Marketplace</a>
+                <a href="universities.html" class="navbar-link">Universities</a>
+                <a href="how-it-works.html" class="navbar-link">How It Works</a>
+                <a href="about.html" class="navbar-link">About</a>
+                <a href="faq.html" class="navbar-link">FAQ</a>
+            </div>
+            
+            <div class="navbar-actions">
+                <button class="navbar-search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="login.html" class="navbar-login-btn">Login</a>
+                <a href="register.html" class="navbar-signup-btn">
+                    Sign Up
+                    <i class="fas fa-chevron-down text-xs"></i>
+                </a>
+            </div>
+            
+            <button class="navbar-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <div class="container-custom">
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="marketplace.html" class="mobile-menu-link">Marketplace</a>
+                <a href="universities.html" class="mobile-menu-link">Universities</a>
+                <a href="how-it-works.html" class="mobile-menu-link">How It Works</a>
+                <a href="about.html" class="mobile-menu-link">About</a>
+                <a href="faq.html" class="mobile-menu-link">FAQ</a>
+                <hr class="mobile-menu-divider" />
+                <a href="login.html" class="mobile-menu-link">Login</a>
+                <a href="register.html" class="mobile-menu-signup">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ======================================== -->
+    <!-- SELL HEADER -->
+    <!-- ======================================== -->
+    <section class="sell-header">
+        <div class="container-custom">
+            <div class="sell-header-content">
+                <span class="sell-badge"><i class="fas fa-tag"></i> Start Selling</span>
+                <h1 class="sell-title">List Your Item <span class="highlight">in Minutes</span></h1>
+                <p class="sell-subtitle">
+                    Reach thousands of students on your campus. It's free and easy!
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- SELL FORM -->
+    <!-- ======================================== -->
+    <section class="sell-form-section">
+        <div class="container-custom">
+            <div class="sell-form-container">
+                
+                <!-- Progress Steps -->
+                <div class="progress-steps">
+                    <div class="step-item active" data-step="1">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Details</div>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step-item" data-step="2">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Photos</div>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step-item" data-step="3">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Price</div>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step-item" data-step="4">
+                        <div class="step-number">4</div>
+                        <div class="step-label">Review</div>
+                    </div>
+                </div>
+                
+                <!-- Form -->
+                <form id="sellForm" onsubmit="submitListing(event)">
+                    
+                    <!-- ===== STEP 1: DETAILS ===== -->
+                    <div class="form-step active" data-step="1">
+                        <h2 class="step-title">Item Details</h2>
+                        <p class="step-description">Tell buyers what you're selling</p>
+                        
+                        <div class="form-group">
+                            <label class="form-label required">Item Title</label>
+                            <input type="text" class="form-input" placeholder="e.g., Ergonomic Desk Chair" id="itemTitle" required />
+                            <span class="form-hint">Be specific and descriptive. Include brand, model, or key features.</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label required">Category</label>
+                            <select class="form-select" id="itemCategory" required>
+                                <option value="">Select a category</option>
+                                <option value="furniture">🛋️ Furniture</option>
+                                <option value="electronics">💻 Electronics</option>
+                                <option value="books">📚 Books</option>
+                                <option value="fashion">👗 Fashion</option>
+                                <option value="kitchen">🍳 Kitchen</option>
+                                <option value="room-essentials">🛏️ Room Essentials</option>
+                                <option value="services">💼 Services</option>
+                                <option value="food">🍕 Food</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label required">Condition</label>
+                            <div class="condition-options">
+                                <label class="condition-option">
+                                    <input type="radio" name="condition" value="new" />
+                                    <span class="condition-icon">✨</span>
+                                    <span class="condition-label">New</span>
+                                    <span class="condition-desc">Brand new, unused</span>
+                                </label>
+                                <label class="condition-option">
+                                    <input type="radio" name="condition" value="like-new" checked />
+                                    <span class="condition-icon">👍</span>
+                                    <span class="condition-label">Like New</span>
+                                    <span class="condition-desc">Gently used, excellent condition</span>
+                                </label>
+                                <label class="condition-option">
+                                    <input type="radio" name="condition" value="good" />
+                                    <span class="condition-icon">✅</span>
+                                    <span class="condition-label">Good</span>
+                                    <span class="condition-desc">Used but well-maintained</span>
+                                </label>
+                                <label class="condition-option">
+                                    <input type="radio" name="condition" value="fair" />
+                                    <span class="condition-icon">👌</span>
+                                    <span class="condition-label">Fair</span>
+                                    <span class="condition-desc">Visible wear, functional</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label required">Description</label>
+                            <textarea class="form-textarea" placeholder="Describe your item in detail. Include condition, features, why someone would want it..." id="itemDescription" rows="5" required></textarea>
+                            <span class="form-hint">Be honest and thorough. Good descriptions sell faster.</span>
+                        </div>
+                        
+                        <button type="button" class="btn-primary btn-next" onclick="nextStep(2)">
+                            Next Step
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- ===== STEP 2: PHOTOS ===== -->
+                    <div class="form-step" data-step="2">
+                        <h2 class="step-title">Add Photos</h2>
+                        <p class="step-description">Show buyers what you're selling</p>
+                        
+                        <div class="upload-area" id="uploadArea">
+                            <input type="file" class="upload-input" id="imageUpload" accept="image/*" multiple />
+                            <div class="upload-content">
+                                <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                                <h3>Drag photos here or click to browse</h3>
+                                <p>Upload up to 5 photos (JPG, PNG, WEBP)</p>
+                                <span class="upload-hint">First photo will be the main image</span>
+                            </div>
+                        </div>
+                        
+                        <div class="image-preview-grid" id="imagePreviewGrid">
+                            <!-- Images will be previewed here -->
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-outline" onclick="prevStep(1)">
+                                <i class="fas fa-arrow-left"></i>
+                                Back
+                            </button>
+                            <button type="button" class="btn-primary btn-next" onclick="nextStep(3)">
+                                Next Step
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- ===== STEP 3: PRICE & LOCATION ===== -->
+                    <div class="form-step" data-step="3">
+                        <h2 class="step-title">Price & Location</h2>
+                        <p class="step-description">Set your price and meet-up location</p>
+                        
+                        <div class="form-group">
+                            <label class="form-label required">Price</label>
+                            <div class="price-input-group">
+                                <span class="price-currency">$</span>
+                                <input type="number" class="form-input" placeholder="0.00" id="itemPrice" required min="0.01" step="0.01" />
+                            </div>
+                            <span class="form-hint" id="priceHint">Suggested price: <span id="suggestedPrice">$25 - $50</span> based on similar items</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label required">University</label>
+                            <select class="form-select" id="itemUniversity" required>
+                                <option value="">Select your university</option>
+                                <option value="uc-berkeley">UC Berkeley</option>
+                                <option value="nyu">NYU</option>
+                                <option value="ut-austin">UT Austin</option>
+                                <option value="stanford">Stanford</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label required">Meet-up Location</label>
+                            <input type="text" class="form-input" placeholder="e.g., Main Library, Student Center, Dorm 4B" id="meetLocation" required />
+                            <span class="form-hint">Choose a safe, public location on campus</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Availability</label>
+                            <div class="availability-options">
+                                <label class="availability-option">
+                                    <input type="radio" name="availability" value="now" checked />
+                                    <span>Available Now</span>
+                                </label>
+                                <label class="availability-option">
+                                    <input type="radio" name="availability" value="specific" />
+                                    <span>Specific Date</span>
+                                </label>
+                            </div>
+                            <input type="date" class="form-input" id="specificDate" style="display:none;" />
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-outline" onclick="prevStep(2)">
+                                <i class="fas fa-arrow-left"></i>
+                                Back
+                            </button>
+                            <button type="button" class="btn-primary btn-next" onclick="nextStep(4)">
+                                Next Step
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- ===== STEP 4: REVIEW ===== -->
+                    <div class="form-step" data-step="4">
+                        <h2 class="step-title">Review Your Listing</h2>
+                        <p class="step-description">Make sure everything looks good</p>
+                        
+                        <div class="review-card" id="reviewCard">
+                            <div class="review-header">
+                                <div class="review-image" id="reviewImage">
+                                    <i class="fas fa-image"></i>
+                                </div>
+                                <div class="review-info">
+                                    <h3 id="reviewTitle">Item Title</h3>
+                                    <span class="review-category" id="reviewCategory">Category</span>
+                                    <span class="review-condition" id="reviewCondition">Condition</span>
+                                </div>
+                            </div>
+                            <div class="review-body">
+                                <div class="review-row">
+                                    <span class="review-label">Price</span>
+                                    <span class="review-value" id="reviewPrice">$0.00</span>
+                                </div>
+                                <div class="review-row">
+                                    <span class="review-label">University</span>
+                                    <span class="review-value" id="reviewUniversity">-</span>
+                                </div>
+                                <div class="review-row">
+                                    <span class="review-label">Location</span>
+                                    <span class="review-value" id="reviewLocation">-</span>
+                                </div>
+                                <div class="review-row">
+                                    <span class="review-label">Description</span>
+                                    <span class="review-value" id="reviewDescription">-</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-outline" onclick="prevStep(3)">
+                                <i class="fas fa-arrow-left"></i>
+                                Back
+                            </button>
+                            <button type="submit" class="btn-primary btn-submit">
+                                <i class="fas fa-check"></i>
+                                Publish Listing
+                            </button>
+                            <button type="button" class="btn-secondary" onclick="saveDraft()">
+                                <i class="fas fa-save"></i>
+                                Save Draft
+                            </button>
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- SELLING TIPS -->
+    <!-- ======================================== -->
+    <section class="tips-section">
+        <div class="container-custom">
+            <div class="tips-header">
+                <h2>Tips for Selling Faster</h2>
+                <p>Follow these tips to get your items sold quickly</p>
+            </div>
+            
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">📸</div>
+                    <h3>Great Photos</h3>
+                    <p>Take clear, well-lit photos from multiple angles. Show any imperfections honestly.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">✍️</div>
+                    <h3>Detailed Description</h3>
+                    <p>Be specific about condition, features, and why someone would want your item.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">💰</div>
+                    <h3>Fair Pricing</h3>
+                    <p>Research similar items and price competitively. You can always negotiate.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🤝</div>
+                    <h3>Be Responsive</h3>
+                    <p>Reply to messages quickly. The faster you respond, the faster you'll sell.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- FOOTER -->
+    <!-- ======================================== -->
+    <footer class="footer">
+        <div class="container-custom">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <span class="footer-logo-icon">R</span>
+                        Relov
+                    </a>
+                    <p class="footer-tagline">Things Worth Loving Again.</p>
+                    <p class="footer-description">Student-only marketplace for trusted buying and selling.</p>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="marketplace.html">Marketplace</a></li>
+                        <li><a href="universities.html">Universities</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="help.html">Help Center</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="report.html">Report Issue</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Get in Touch</h4>
+                    <ul class="footer-links">
+                        <li class="footer-contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>support@relov.com</span>
+                        </li>
+                        <li class="footer-contact-item">
+                            <i class="fas fa-map-pin"></i>
+                            <span>Student communities nationwide</span>
+                        </li>
+                        <li class="footer-contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (800) RELOV-01</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2024 Relov. All rights reserved. Made with <span class="heart">❤️</span> for students.
+                </p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ======================================== -->
+    <!-- JAVASCRIPT -->
+    <!-- ======================================== -->
+    <script src="js/main.js"></script>
+    <script src="js/sell.js"></script>
+
+</body>
+</html>

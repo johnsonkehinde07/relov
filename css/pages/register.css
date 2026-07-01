@@ -1,0 +1,380 @@
+/* ========================================
+   CSS/pages/register.css
+   ======================================== */
+
+/* ======================================== */
+/* REGISTER CONTAINER */
+/* ======================================== */
+.register-container {
+    max-width: 520px;
+}
+
+.register-section .auth-container {
+    max-width: 520px;
+}
+
+/* ======================================== */
+/* REGISTER STEPS */
+/* ======================================== */
+.register-steps {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    padding: 0 0.5rem;
+}
+
+.step-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    flex-shrink: 0;
+}
+
+.step-num {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: var(--radius-full);
+    background: var(--slate-200);
+    color: var(--slate-500);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.8125rem;
+    transition: all 0.3s ease;
+}
+
+.step-indicator.active .step-num {
+    background: var(--primary-gradient);
+    color: white;
+    box-shadow: 0 4px 16px rgba(26, 86, 219, 0.25);
+}
+
+.step-indicator.completed .step-num {
+    background: var(--primary);
+    color: white;
+}
+
+.step-indicator.completed .step-num::after {
+    content: '✓';
+}
+
+.step-label {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    color: var(--slate-400);
+    transition: color 0.3s ease;
+}
+
+.step-indicator.active .step-label {
+    color: var(--slate-900);
+}
+
+.step-indicator.completed .step-label {
+    color: var(--primary);
+}
+
+.step-line {
+    flex: 1;
+    height: 2px;
+    background: var(--slate-200);
+    margin: 0 0.25rem;
+    position: relative;
+    top: -0.625rem;
+}
+
+.step-line.active {
+    background: var(--primary);
+}
+
+/* ======================================== */
+/* FORM STEPS */
+/* ======================================== */
+.form-step-register {
+    display: none;
+    animation: fadeInUp 0.4s ease-out;
+}
+
+.form-step-register.active {
+    display: block;
+}
+
+/* ======================================== */
+/* PASSWORD STRENGTH */
+/* ======================================== */
+.password-strength {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 0.375rem;
+}
+
+.strength-bar {
+    flex: 1;
+    height: 4px;
+    background: var(--slate-200);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    position: relative;
+}
+
+.strength-bar::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0%;
+    border-radius: var(--radius-sm);
+    transition: all 0.3s ease;
+}
+
+.strength-bar.weak::after {
+    width: 33%;
+    background: var(--danger);
+}
+
+.strength-bar.medium::after {
+    width: 66%;
+    background: var(--warning);
+}
+
+.strength-bar.strong::after {
+    width: 100%;
+    background: var(--primary);
+}
+
+.strength-text {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--slate-500);
+    min-width: 3rem;
+}
+
+.strength-text.weak { color: var(--danger); }
+.strength-text.medium { color: var(--warning); }
+.strength-text.strong { color: var(--primary); }
+
+/* ======================================== */
+/* VERIFICATION SECTION */
+/* ======================================== */
+.verification-section {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.verification-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: var(--radius-full);
+    background: var(--primary-50);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.75rem;
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+
+.verification-section h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--slate-900);
+    margin-bottom: 0.25rem;
+}
+
+.verification-section p {
+    font-size: 0.875rem;
+    color: var(--slate-500);
+    margin-bottom: 1.5rem;
+}
+
+.verification-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.verification-option {
+    cursor: pointer;
+}
+
+.verification-option input[type="radio"] {
+    display: none;
+}
+
+.verification-card {
+    padding: 1rem;
+    border: 2px solid var(--slate-200);
+    border-radius: var(--radius-md);
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.verification-card:hover {
+    border-color: var(--slate-300);
+}
+
+.verification-option:has(input:checked) .verification-card {
+    border-color: var(--primary);
+    background: var(--primary-50);
+    box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.1);
+}
+
+.verification-card i {
+    font-size: 1.5rem;
+    color: var(--primary);
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.verification-card span {
+    display: block;
+    font-weight: 600;
+    color: var(--slate-900);
+    font-size: 0.875rem;
+}
+
+.verification-card small {
+    font-size: 0.6875rem;
+    color: var(--slate-400);
+}
+
+/* Verification Upload */
+.verification-upload {
+    border: 2px dashed var(--slate-300);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: var(--slate-50);
+    margin-bottom: 1rem;
+}
+
+.verification-upload:hover {
+    border-color: var(--primary);
+    background: var(--primary-50);
+}
+
+.verification-upload .upload-icon {
+    font-size: 2rem;
+    color: var(--slate-400);
+    margin-bottom: 0.25rem;
+}
+
+.verification-upload h4 {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--slate-700);
+}
+
+.verification-upload p {
+    font-size: 0.8125rem;
+    color: var(--slate-500);
+}
+
+.verification-note {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    background: var(--primary-50);
+    border-radius: var(--radius-sm);
+    color: var(--slate-600);
+    font-size: 0.8125rem;
+}
+
+.verification-note i {
+    color: var(--primary);
+    font-size: 1rem;
+}
+
+/* File uploaded state */
+.verification-upload.uploaded {
+    border-color: var(--primary);
+    background: var(--primary-50);
+}
+
+.verification-upload .file-name {
+    font-weight: 500;
+    color: var(--primary);
+    margin-top: 0.25rem;
+}
+
+/* ======================================== */
+/* TERMS CHECKBOX */
+/* ======================================== */
+.form-group label:has(input[type="checkbox"]) {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    color: var(--slate-600);
+    cursor: pointer;
+}
+
+.form-group label:has(input[type="checkbox"]) input[type="checkbox"] {
+    width: 1rem;
+    height: 1rem;
+    accent-color: var(--primary);
+    margin-top: 0.125rem;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.form-group label:has(input[type="checkbox"]) a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.form-group label:has(input[type="checkbox"]) a:hover {
+    text-decoration: underline;
+}
+
+/* ======================================== */
+/* REGISTER RESPONSIVE */
+/* ======================================== */
+@media (max-width: 640px) {
+    .register-steps {
+        padding: 0;
+        gap: 0.25rem;
+    }
+    
+    .step-label {
+        font-size: 0.625rem;
+    }
+    
+    .step-num {
+        width: 2rem;
+        height: 2rem;
+        font-size: 0.75rem;
+    }
+    
+    .verification-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .verification-upload {
+        padding: 1rem;
+    }
+    
+    .register-container {
+        padding: 1.25rem;
+    }
+}
+
+/* ======================================== */
+/* TOAST OVERRIDES */
+/* ======================================== */
+.toast-notification.success {
+    background: var(--primary);
+}
+
+.toast-notification.error {
+    background: var(--danger);
+}

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Account - Relov</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="css/components/navbar.css" />
+    <link rel="stylesheet" href="css/components/footer.css" />
+    <link rel="stylesheet" href="css/components/buttons.css" />
+    
+    <!-- Page Specific -->
+    <link rel="stylesheet" href="css/pages/auth.css" />
+    <link rel="stylesheet" href="css/pages/register.css" />
+</head>
+<body>
+
+    <!-- ======================================== -->
+    <!-- NAVBAR (Minimal) -->
+    <!-- ======================================== -->
+    <nav class="navbar" id="navbar">
+        <div class="container-custom flex items-center justify-between">
+            <a href="index.html" class="navbar-logo">
+                <span class="navbar-logo-icon">R</span>
+                Relov
+            </a>
+            
+            <div class="navbar-actions">
+                <a href="login.html" class="navbar-login-btn">Sign In</a>
+            </div>
+            
+            <button class="navbar-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <div class="container-custom">
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="index.html" class="mobile-menu-link">Home</a>
+                <a href="marketplace.html" class="mobile-menu-link">Marketplace</a>
+                <a href="login.html" class="mobile-menu-signup">Sign In</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ======================================== -->
+    <!-- REGISTER FORM -->
+    <!-- ======================================== -->
+    <section class="auth-section register-section">
+        <div class="container-custom">
+            <div class="auth-container register-container">
+                
+                <!-- Header -->
+                <div class="auth-header">
+                    <div class="auth-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h1 class="auth-title">Join Relov</h1>
+                    <p class="auth-subtitle">Create your student account and start saving today</p>
+                </div>
+                
+                <!-- Progress Steps -->
+                <div class="register-steps">
+                    <div class="step-indicator active" data-step="1">
+                        <span class="step-num">1</span>
+                        <span class="step-label">Account</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step-indicator" data-step="2">
+                        <span class="step-num">2</span>
+                        <span class="step-label">Student</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step-indicator" data-step="3">
+                        <span class="step-num">3</span>
+                        <span class="step-label">Verify</span>
+                    </div>
+                </div>
+                
+                <!-- Social Login -->
+                <div class="social-login">
+                    <button class="social-btn google" onclick="socialRegister('google')">
+                        <i class="fab fa-google"></i>
+                        Continue with Google
+                    </button>
+                    <button class="social-btn microsoft" onclick="socialRegister('microsoft')">
+                        <i class="fab fa-microsoft"></i>
+                        Continue with Microsoft
+                    </button>
+                    
+                    <div class="divider">
+                        <span>or sign up with email</span>
+                    </div>
+                </div>
+                
+                <!-- Register Form -->
+                <form class="auth-form" id="registerForm" onsubmit="handleRegister(event)">
+                    
+                    <!-- ===== STEP 1: ACCOUNT ===== -->
+                    <div class="form-step-register active" data-step="1">
+                        <div class="form-group">
+                            <label class="form-label required">Full Name</label>
+                            <div class="input-icon-group">
+                                <i class="fas fa-user input-icon"></i>
+                                <input type="text" class="form-input" placeholder="John Doe" id="regName" required />
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label required">Email Address</label>
+                            <div class="input-icon-group">
+                                <i class="fas fa-envelope input-icon"></i>
+                                <input type="email" class="form-input" placeholder="student@university.edu" id="regEmail" required />
+                            </div>
+                            <span class="form-hint">Use your university email for verification</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label required">Phone Number</label>
+                            <div class="input-icon-group">
+                                <i class="fas fa-phone input-icon"></i>
+                                <input type="tel" class="form-input" placeholder="(555) 123-4567" id="regPhone" required />
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label required">Password</label>
+                            <div class="input-icon-group">
+                                <i class="fas fa-lock input-icon"></i>
+                                <input type="password" class="form-input" placeholder="Min 8 characters" id="regPassword" required />
+                                <button type="button" class="password-toggle" onclick="togglePassword('regPassword', 'regPasswordIcon')">
+                                    <i class="fas fa-eye" id="regPasswordIcon"></i>
+                                </button>
+                            </div>
+                            <div class="password-strength" id="passwordStrength">
+                                <div class="strength-bar" id="strengthBar"></div>
+                                <span class="strength-text" id="strengthText">Weak</span>
+                            </div>
+                            <span class="form-hint">Use at least 8 characters with letters and numbers</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label required">Confirm Password</label>
+                            <div class="input-icon-group">
+                                <i class="fas fa-check input-icon"></i>
+                                <input type="password" class="form-input" placeholder="Confirm your password" id="regConfirmPassword" required />
+                                <button type="button" class="password-toggle" onclick="togglePassword('regConfirmPassword', 'regConfirmIcon')">
+                                    <i class="fas fa-eye" id="regConfirmIcon"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <button type="button" class="btn-primary btn-full btn-next" onclick="nextRegisterStep(2)">
+                            Next Step
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- ===== STEP 2: STUDENT INFO ===== -->
+                    <div class="form-step-register" data-step="2">
+                        <div class="form-group">
+                            <label class="form-label required">University</label>
+                            <div class="input-icon-group">
+                                <i class="fas fa-university input-icon"></i>
+                                <select class="form-select" id="regUniversity" required>
+                                    <option value="">Select your university</option>
+                                    <option value="uc-berkeley">UC Berkeley</option>
+                                    <option value="nyu">NYU</option>
+                                    <option value="ut-austin">UT Austin</option>
+                                    <option value="stanford">Stanford</option>
+                                    <option value="ucla">UCLA</option>
+                                    <option value="michigan">University of Michigan</option>
+                                    <option value="harvard">Harvard University</option>
+                                    <option value="mit">MIT</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label required">Faculty / Department</label>
+                            <div class="input-icon-group">
+                                <i class="fas fa-building input-icon"></i>
+                                <select class="form-select" id="regFaculty" required>
+                                    <option value="">Select your faculty</option>
+                                    <option value="engineering">Engineering</option>
+                                    <option value="business">Business</option>
+                                    <option value="arts">Arts & Humanities</option>
+                                    <option value="sciences">Sciences</option>
+                                    <option value="medicine">Medicine</option>
+                                    <option value="law">Law</option>
+                                    <option value="education">Education</option>
+                                    <option value="computer-science">Computer Science</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label required">Level of Study</label>
+                            <div class="input-icon-group">
+                                <i class="fas fa-graduation-cap input-icon"></i>
+                                <select class="form-select" id="regLevel" required>
+                                    <option value="">Select your level</option>
+                                    <option value="100">100 Level (Freshman)</option>
+                                    <option value="200">200 Level (Sophomore)</option>
+                                    <option value="300">300 Level (Junior)</option>
+                                    <option value="400">400 Level (Senior)</option>
+                                    <option value="500">500 Level (5th Year)</option>
+                                    <option value="postgraduate">Postgraduate</option>
+                                    <option value="masters">Masters</option>
+                                    <option value="phd">PhD</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label required">Student ID</label>
+                            <div class="input-icon-group">
+                                <i class="fas fa-id-card input-icon"></i>
+                                <input type="text" class="form-input" placeholder="e.g., S12345678" id="regStudentId" required />
+                            </div>
+                            <span class="form-hint">Your university student ID number</span>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-outline" onclick="prevRegisterStep(1)">
+                                <i class="fas fa-arrow-left"></i>
+                                Back
+                            </button>
+                            <button type="button" class="btn-primary btn-next" onclick="nextRegisterStep(3)">
+                                Next Step
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- ===== STEP 3: VERIFICATION ===== -->
+                    <div class="form-step-register" data-step="3">
+                        <div class="verification-section">
+                            <div class="verification-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3>Verify Your Student Identity</h3>
+                            <p>To keep our community safe and trusted, we need to verify you're a student.</p>
+                            
+                            <div class="verification-options">
+                                <label class="verification-option">
+                                    <input type="radio" name="verification" value="email" checked />
+                                    <div class="verification-card">
+                                        <i class="fas fa-envelope"></i>
+                                        <span>University Email</span>
+                                        <small>Verify via your .edu email</small>
+                                    </div>
+                                </label>
+                                <label class="verification-option">
+                                    <input type="radio" name="verification" value="id" />
+                                    <div class="verification-card">
+                                        <i class="fas fa-id-card"></i>
+                                        <span>Student ID</span>
+                                        <small>Upload a photo of your ID</small>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="upload-area verification-upload" id="verificationUpload">
+                                <input type="file" class="upload-input" id="verificationFile" accept="image/*,.pdf" />
+                                <div class="upload-content">
+                                    <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                                    <h4>Upload Student ID or Proof</h4>
+                                    <p>JPG, PNG, or PDF (max 5MB)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="verification-note">
+                                <i class="fas fa-info-circle"></i>
+                                <span>Your information is secure and only used for verification</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">
+                                <input type="checkbox" id="regTerms" required />
+                                <span>I agree to the <a href="terms.html" target="_blank">Terms of Service</a> and <a href="privacy.html" target="_blank">Privacy Policy</a></span>
+                            </label>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-outline" onclick="prevRegisterStep(2)">
+                                <i class="fas fa-arrow-left"></i>
+                                Back
+                            </button>
+                            <button type="submit" class="btn-primary btn-full btn-submit" id="registerBtn">
+                                <span id="registerBtnText">Create Account</span>
+                                <i class="fas fa-check" id="registerBtnIcon"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                </form>
+                
+                <!-- Login Link -->
+                <div class="auth-footer">
+                    <p>Already have an account? <a href="login.html">Sign In</a></p>
+                </div>
+                
+                <!-- Features -->
+                <div class="auth-features">
+                    <div class="auth-feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Verified students only</span>
+                    </div>
+                    <div class="auth-feature">
+                        <i class="fas fa-gem"></i>
+                        <span>Free to join</span>
+                    </div>
+                    <div class="auth-feature">
+                        <i class="fas fa-handshake"></i>
+                        <span>Safe community</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- FOOTER (Minimal) -->
+    <!-- ======================================== -->
+    <footer class="footer">
+        <div class="container-custom">
+            <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+                <p class="footer-copyright">
+                    © 2024 Relov. All rights reserved. Made with <span class="heart">❤️</span> for students.
+                </p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ======================================== -->
+    <!-- JAVASCRIPT -->
+    <!-- ======================================== -->
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/register.js"></script>
+
+</body>
+</html>

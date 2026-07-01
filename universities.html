@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Universities - Relov</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="css/components/navbar.css" />
+    <link rel="stylesheet" href="css/components/footer.css" />
+    <link rel="stylesheet" href="css/components/cards.css" />
+    <link rel="stylesheet" href="css/components/buttons.css" />
+    
+    <!-- Page Specific -->
+    <link rel="stylesheet" href="css/pages/universities.css" />
+</head>
+<body>
+
+    <!-- ======================================== -->
+    <!-- NAVBAR -->
+    <!-- ======================================== -->
+    <nav class="navbar" id="navbar">
+        <div class="container-custom flex items-center justify-between">
+            <a href="index.html" class="navbar-logo">
+                <span class="navbar-logo-icon">R</span>
+                Relov
+            </a>
+            
+            <div class="navbar-links">
+                <a href="marketplace.html" class="navbar-link">Marketplace</a>
+                <a href="universities.html" class="navbar-link active">Universities</a>
+                <a href="how-it-works.html" class="navbar-link">How It Works</a>
+                <a href="about.html" class="navbar-link">About</a>
+                <a href="faq.html" class="navbar-link">FAQ</a>
+            </div>
+            
+            <div class="navbar-actions">
+                <button class="navbar-search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="login.html" class="navbar-login-btn">Login</a>
+                <a href="register.html" class="navbar-signup-btn">
+                    Sign Up
+                    <i class="fas fa-chevron-down text-xs"></i>
+                </a>
+            </div>
+            
+            <button class="navbar-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <div class="container-custom">
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="marketplace.html" class="mobile-menu-link">Marketplace</a>
+                <a href="universities.html" class="mobile-menu-link">Universities</a>
+                <a href="how-it-works.html" class="mobile-menu-link">How It Works</a>
+                <a href="about.html" class="mobile-menu-link">About</a>
+                <a href="faq.html" class="mobile-menu-link">FAQ</a>
+                <hr class="mobile-menu-divider" />
+                <a href="login.html" class="mobile-menu-link">Login</a>
+                <a href="register.html" class="mobile-menu-signup">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ======================================== -->
+    <!-- PAGE HEADER -->
+    <!-- ======================================== -->
+    <section class="universities-header">
+        <div class="container-custom">
+            <div class="universities-header-content">
+                <span class="header-badge"><i class="fas fa-university"></i> Campus Communities</span>
+                <h1 class="header-title">
+                    Find Your <span class="highlight">University</span>
+                </h1>
+                <p class="header-subtitle">
+                    Join your campus community. Buy, sell, and connect with students at your university.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- FEATURED UNIVERSITY -->
+    <!-- ======================================== -->
+    <section class="featured-university">
+        <div class="container-custom">
+            <div class="featured-card">
+                <div class="featured-badge">
+                    <i class="fas fa-star"></i>
+                    Featured University
+                </div>
+                <div class="featured-content">
+                    <div class="featured-info">
+                        <div class="university-logo featured-logo">
+                            <span>PAU</span>
+                        </div>
+                        <h2 class="featured-name">Pan-Atlantic University</h2>
+                        <p class="featured-location">
+                            <i class="fas fa-map-pin"></i>
+                            Lagos, Nigeria
+                        </p>
+                        <div class="featured-stats">
+                            <div class="stat">
+                                <span class="stat-number">1,247</span>
+                                <span class="stat-label">Students</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">856</span>
+                                <span class="stat-label">Items Listed</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">₦8.2M</span>
+                                <span class="stat-label">Saved by Students</span>
+                            </div>
+                        </div>
+                        <div class="featured-actions">
+                            <a href="marketplace.html?university=pau" class="btn-primary">
+                                <i class="fas fa-store"></i>
+                                Browse Marketplace
+                            </a>
+                            <a href="register.html" class="btn-outline">
+                                <i class="fas fa-user-plus"></i>
+                                Join Community
+                            </a>
+                        </div>
+                    </div>
+                    <div class="featured-image">
+                        <div class="featured-image-placeholder">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Pan-Atlantic University</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- ACTIVE UNIVERSITIES -->
+    <!-- ======================================== -->
+    <section class="universities-grid-section">
+        <div class="container-custom">
+            <div class="section-header">
+                <h2>Active Universities</h2>
+                <p>These universities are already on Relov. Join your campus community!</p>
+            </div>
+            
+            <div class="universities-grid">
+                <!-- Pan-Atlantic University -->
+                <div class="university-card active">
+                    <div class="university-card-header">
+                        <div class="university-logo">
+                            <span>PAU</span>
+                        </div>
+                        <span class="university-status active">
+                            <i class="fas fa-circle"></i>
+                            Active
+                        </span>
+                    </div>
+                    <h3 class="university-name">Pan-Atlantic University</h3>
+                    <p class="university-location">
+                        <i class="fas fa-map-pin"></i>
+                        Lagos, Nigeria
+                    </p>
+                    <div class="university-stats">
+                        <div class="stat">
+                            <span class="stat-number">1,247</span>
+                            <span class="stat-label">Students</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">856</span>
+                            <span class="stat-label">Listings</span>
+                        </div>
+                    </div>
+                    <div class="university-actions">
+                        <a href="marketplace.html?university=pau" class="btn-primary btn-sm btn-full">
+                            Browse Items
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- COMING SOON UNIVERSITIES -->
+    <!-- ======================================== -->
+    <section class="coming-soon-section">
+        <div class="container-custom">
+            <div class="section-header">
+                <h2>Coming Soon</h2>
+                <p>These universities are joining Relov soon. Join the waitlist to be notified!</p>
+            </div>
+            
+            <div class="coming-soon-grid">
+                <!-- Covenant University -->
+                <div class="coming-soon-card">
+                    <div class="coming-soon-logo">
+                        <span>CU</span>
+                    </div>
+                    <h3 class="coming-soon-name">Covenant University</h3>
+                    <p class="coming-soon-location">
+                        <i class="fas fa-map-pin"></i>
+                        Ota, Ogun State
+                    </p>
+                    <div class="coming-soon-badge">
+                        <i class="fas fa-clock"></i>
+                        Coming Soon
+                    </div>
+                    <button class="btn-secondary btn-sm btn-full waitlist-btn" onclick="joinWaitlist('Covenant University')">
+                        <i class="fas fa-bell"></i>
+                        Join Waitlist
+                    </button>
+                </div>
+
+                <!-- Babcock University -->
+                <div class="coming-soon-card">
+                    <div class="coming-soon-logo">
+                        <span>BU</span>
+                    </div>
+                    <h3 class="coming-soon-name">Babcock University</h3>
+                    <p class="coming-soon-location">
+                        <i class="fas fa-map-pin"></i>
+                        Ilishan-Remo, Ogun State
+                    </p>
+                    <div class="coming-soon-badge">
+                        <i class="fas fa-clock"></i>
+                        Coming Soon
+                    </div>
+                    <button class="btn-secondary btn-sm btn-full waitlist-btn" onclick="joinWaitlist('Babcock University')">
+                        <i class="fas fa-bell"></i>
+                        Join Waitlist
+                    </button>
+                </div>
+
+                <!-- Lead City University -->
+                <div class="coming-soon-card">
+                    <div class="coming-soon-logo">
+                        <span>LCU</span>
+                    </div>
+                    <h3 class="coming-soon-name">Lead City University</h3>
+                    <p class="coming-soon-location">
+                        <i class="fas fa-map-pin"></i>
+                        Ibadan, Oyo State
+                    </p>
+                    <div class="coming-soon-badge">
+                        <i class="fas fa-clock"></i>
+                        Coming Soon
+                    </div>
+                    <button class="btn-secondary btn-sm btn-full waitlist-btn" onclick="joinWaitlist('Lead City University')">
+                        <i class="fas fa-bell"></i>
+                        Join Waitlist
+                    </button>
+                </div>
+
+                <!-- Afe Babalola University -->
+                <div class="coming-soon-card">
+                    <div class="coming-soon-logo">
+                        <span>ABUAD</span>
+                    </div>
+                    <h3 class="coming-soon-name">Afe Babalola University</h3>
+                    <p class="coming-soon-location">
+                        <i class="fas fa-map-pin"></i>
+                        Ado-Ekiti, Ekiti State
+                    </p>
+                    <div class="coming-soon-badge">
+                        <i class="fas fa-clock"></i>
+                        Coming Soon
+                    </div>
+                    <button class="btn-secondary btn-sm btn-full waitlist-btn" onclick="joinWaitlist('Afe Babalola University')">
+                        <i class="fas fa-bell"></i>
+                        Join Waitlist
+                    </button>
+                </div>
+
+                <!-- University of Lagos -->
+                <div class="coming-soon-card">
+                    <div class="coming-soon-logo">
+                        <span>UNILAG</span>
+                    </div>
+                    <h3 class="coming-soon-name">University of Lagos</h3>
+                    <p class="coming-soon-location">
+                        <i class="fas fa-map-pin"></i>
+                        Akoka, Lagos
+                    </p>
+                    <div class="coming-soon-badge">
+                        <i class="fas fa-clock"></i>
+                        Coming Soon
+                    </div>
+                    <button class="btn-secondary btn-sm btn-full waitlist-btn" onclick="joinWaitlist('University of Lagos')">
+                        <i class="fas fa-bell"></i>
+                        Join Waitlist
+                    </button>
+                </div>
+
+                <!-- Obafemi Awolowo University -->
+                <div class="coming-soon-card">
+                    <div class="coming-soon-logo">
+                        <span>OAU</span>
+                    </div>
+                    <h3 class="coming-soon-name">Obafemi Awolowo University</h3>
+                    <p class="coming-soon-location">
+                        <i class="fas fa-map-pin"></i>
+                        Ile-Ife, Osun State
+                    </p>
+                    <div class="coming-soon-badge">
+                        <i class="fas fa-clock"></i>
+                        Coming Soon
+                    </div>
+                    <button class="btn-secondary btn-sm btn-full waitlist-btn" onclick="joinWaitlist('Obafemi Awolowo University')">
+                        <i class="fas fa-bell"></i>
+                        Join Waitlist
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- WHY JOIN SECTION -->
+    <!-- ======================================== -->
+    <section class="why-join-section">
+        <div class="container-custom">
+            <div class="section-header">
+                <h2>Why Join Your <span class="highlight">University Community</span></h2>
+                <p>Relov connects you with students at your university for trusted buying and selling.</p>
+            </div>
+            
+            <div class="why-join-grid">
+                <div class="why-join-card">
+                    <div class="why-join-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Trusted Community</h3>
+                    <p>Only verified students from your university can buy and sell on your campus marketplace.</p>
+                </div>
+                
+                <div class="why-join-card">
+                    <div class="why-join-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Save Money</h3>
+                    <p>Find affordable pre-owned items from fellow students. Save thousands of Naira every semester.</p>
+                </div>
+                
+                <div class="why-join-card">
+                    <div class="why-join-icon">
+                        <i class="fas fa-map-pin"></i>
+                    </div>
+                    <h3>Local Convenience</h3>
+                    <p>Meet on campus for safe, convenient pickups. No shipping costs or waiting.</p>
+                </div>
+                
+                <div class="why-join-card">
+                    <div class="why-join-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Sustainable Living</h3>
+                    <p>Give items a second life and reduce waste. Join the circular economy movement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- CTA SECTION -->
+    <!-- ======================================== -->
+    <section class="cta-section">
+        <div class="bg-pattern"></div>
+        <div class="container-custom relative">
+            <div class="cta-content">
+                <span class="cta-badge">Get Started</span>
+                <h2 class="cta-title">Your University <span class="highlight">Coming Soon?</span></h2>
+                <p class="cta-subtitle">
+                    Join the waitlist and be the first to know when your university goes live on Relov!
+                </p>
+                <div class="cta-buttons">
+                    <a href="#coming-soon" class="btn-white btn-lg group">
+                        Join Waitlist
+                        <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 smooth"></i>
+                    </a>
+                    <a href="register.html" class="btn-outline-white btn-lg">
+                        Create Account
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- FOOTER -->
+    <!-- ======================================== -->
+    <footer class="footer">
+        <div class="container-custom">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <span class="footer-logo-icon">R</span>
+                        Relov
+                    </a>
+                    <p class="footer-tagline">Things Worth Loving Again.</p>
+                    <p class="footer-description">Student-only marketplace for trusted buying and selling.</p>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="marketplace.html">Marketplace</a></li>
+                        <li><a href="universities.html">Universities</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="help.html">Help Center</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="report.html">Report Issue</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Get in Touch</h4>
+                    <ul class="footer-links">
+                        <li class="footer-contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>support@relov.com</span>
+                        </li>
+                        <li class="footer-contact-item">
+                            <i class="fas fa-map-pin"></i>
+                            <span>Lagos, Nigeria</span>
+                        </li>
+                        <li class="footer-contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+234 (800) RELOV-01</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2024 Relov. All rights reserved. Made with <span class="heart">❤️</span> for Nigerian students.
+                </p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ======================================== -->
+    <!-- WAITLIST MODAL -->
+    <!-- ======================================== -->
+    <div class="modal" id="waitlistModal">
+        <div class="modal-overlay" onclick="closeWaitlistModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeWaitlistModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="waitlist-modal-icon">
+                <i class="fas fa-bell"></i>
+            </div>
+            <h2 class="modal-title">Join the Waitlist</h2>
+            <p class="modal-subtitle" id="waitlistUniversityText">Get notified when your university joins Relov</p>
+            
+            <form id="waitlistForm" onsubmit="submitWaitlist(event)">
+                <div class="form-group">
+                    <label class="form-label required">Full Name</label>
+                    <input type="text" class="form-input" placeholder="John Doe" id="waitlistName" required />
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label required">Email Address</label>
+                    <input type="email" class="form-input" placeholder="student@university.edu" id="waitlistEmail" required />
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label required">University</label>
+                    <select class="form-select" id="waitlistUniversity" required>
+                        <option value="">Select your university</option>
+                        <option value="covenant">Covenant University</option>
+                        <option value="babcock">Babcock University</option>
+                        <option value="lead-city">Lead City University</option>
+                        <option value="abuad">Afe Babalola University</option>
+                        <option value="unilag">University of Lagos</option>
+                        <option value="oau">Obafemi Awolowo University</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn-primary btn-full btn-lg">
+                    Join Waitlist
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- ======================================== -->
+    <!-- JAVASCRIPT -->
+    <!-- ======================================== -->
+    <script src="js/main.js"></script>
+    <script src="js/universities.js"></script>
+
+</body>
+</html>

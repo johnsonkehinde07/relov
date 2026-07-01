@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How It Works - Relov</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="css/components/navbar.css" />
+    <link rel="stylesheet" href="css/components/footer.css" />
+    <link rel="stylesheet" href="css/components/cards.css" />
+    <link rel="stylesheet" href="css/components/buttons.css" />
+    
+    <!-- Page Specific -->
+    <link rel="stylesheet" href="css/pages/how-it-works.css" />
+</head>
+<body>
+
+    <!-- ======================================== -->
+    <!-- NAVBAR -->
+    <!-- ======================================== -->
+    <nav class="navbar" id="navbar">
+        <div class="container-custom flex items-center justify-between">
+            <a href="index.html" class="navbar-logo">
+                <span class="navbar-logo-icon">R</span>
+                Relov
+            </a>
+            
+            <div class="navbar-links">
+                <a href="marketplace.html" class="navbar-link">Marketplace</a>
+                <a href="universities.html" class="navbar-link">Universities</a>
+                <a href="how-it-works.html" class="navbar-link active">How It Works</a>
+                <a href="about.html" class="navbar-link">About</a>
+                <a href="faq.html" class="navbar-link">FAQ</a>
+            </div>
+            
+            <div class="navbar-actions">
+                <button class="navbar-search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="login.html" class="navbar-login-btn">Login</a>
+                <a href="register.html" class="navbar-signup-btn">
+                    Sign Up
+                    <i class="fas fa-chevron-down text-xs"></i>
+                </a>
+            </div>
+            
+            <button class="navbar-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <div class="container-custom">
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="marketplace.html" class="mobile-menu-link">Marketplace</a>
+                <a href="universities.html" class="mobile-menu-link">Universities</a>
+                <a href="how-it-works.html" class="mobile-menu-link">How It Works</a>
+                <a href="about.html" class="mobile-menu-link">About</a>
+                <a href="faq.html" class="mobile-menu-link">FAQ</a>
+                <hr class="mobile-menu-divider" />
+                <a href="login.html" class="mobile-menu-link">Login</a>
+                <a href="register.html" class="mobile-menu-signup">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ======================================== -->
+    <!-- PAGE HEADER -->
+    <!-- ======================================== -->
+    <section class="how-it-works-header">
+        <div class="container-custom">
+            <div class="header-content">
+                <span class="header-badge"><i class="fas fa-rocket"></i> Get Started</span>
+                <h1 class="header-title">
+                    How <span class="highlight">Relov</span> Works
+                </h1>
+                <p class="header-subtitle">
+                    Buy and sell trusted items within your university community in just a few simple steps.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- STEPS OVERVIEW -->
+    <!-- ======================================== -->
+    <section class="steps-overview">
+        <div class="container-custom">
+            <div class="steps-grid">
+                <!-- Step 1 -->
+                <div class="step-card animate-on-scroll">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">📝</div>
+                    <h3 class="step-title">Create Account</h3>
+                    <p class="step-description">
+                        Sign up with your university email and join the trusted student community.
+                    </p>
+                    <ul class="step-details">
+                        <li><i class="fas fa-check"></i> Free to join</li>
+                        <li><i class="fas fa-check"></i> Use your .edu email</li>
+                        <li><i class="fas fa-check"></i> 2-minute setup</li>
+                    </ul>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-card animate-on-scroll" style="animation-delay: 0.2s;">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">✅</div>
+                    <h3 class="step-title">Verify Identity</h3>
+                    <p class="step-description">
+                        Get verified as a student to unlock buying and selling features.
+                    </p>
+                    <ul class="step-details">
+                        <li><i class="fas fa-check"></i> Student ID verification</li>
+                        <li><i class="fas fa-check"></i> Secure & private</li>
+                        <li><i class="fas fa-check"></i> Verified badge on profile</li>
+                    </ul>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-card animate-on-scroll" style="animation-delay: 0.4s;">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">🔄</div>
+                    <h3 class="step-title">Browse or Sell</h3>
+                    <p class="step-description">
+                        List your items or find great deals from fellow students.
+                    </p>
+                    <ul class="step-details">
+                        <li><i class="fas fa-check"></i> List items for free</li>
+                        <li><i class="fas fa-check"></i> Search & filter</li>
+                        <li><i class="fas fa-check"></i> Save favorites</li>
+                    </ul>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="step-card animate-on-scroll" style="animation-delay: 0.6s;">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">📍</div>
+                    <h3 class="step-title">Meet Safely</h3>
+                    <p class="step-description">
+                        Connect and arrange safe meet-ups on campus.
+                    </p>
+                    <ul class="step-details">
+                        <li><i class="fas fa-check"></i> On-campus meetups</li>
+                        <li><i class="fas fa-check"></i> Secure chat</li>
+                        <li><i class="fas fa-check"></i> Rate & review</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- FOR BUYERS -->
+    <!-- ======================================== -->
+    <section class="for-buyers-section">
+        <div class="container-custom">
+            <div class="section-header">
+                <span class="section-tag">For Buyers</span>
+                <h2>Find Great Deals on <span class="highlight">Campus</span></h2>
+                <p>Save money and find exactly what you need from trusted students.</p>
+            </div>
+            
+            <div class="buyers-grid">
+                <div class="buyer-card animate-on-scroll">
+                    <div class="buyer-icon">🔍</div>
+                    <h3>Search & Discover</h3>
+                    <p>Browse thousands of items from students at your university. Use filters to find exactly what you need.</p>
+                </div>
+                
+                <div class="buyer-card animate-on-scroll" style="animation-delay: 0.2s;">
+                    <div class="buyer-icon">💬</div>
+                    <h3>Chat with Sellers</h3>
+                    <p>Ask questions, negotiate prices, and arrange meetups directly through our secure messaging system.</p>
+                </div>
+                
+                <div class="buyer-card animate-on-scroll" style="animation-delay: 0.4s;">
+                    <div class="buyer-icon">🤝</div>
+                    <h3>Meet & Purchase</h3>
+                    <p>Meet on campus for safe, convenient transactions. No shipping costs or waiting.</p>
+                </div>
+                
+                <div class="buyer-card animate-on-scroll" style="animation-delay: 0.6s;">
+                    <div class="buyer-icon">⭐</div>
+                    <h3>Rate & Review</h3>
+                    <p>Build trust by rating sellers and leaving reviews. Help other students make informed decisions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- FOR SELLERS -->
+    <!-- ======================================== -->
+    <section class="for-sellers-section">
+        <div class="container-custom">
+            <div class="section-header">
+                <span class="section-tag">For Sellers</span>
+                <h2>Turn Your Items into <span class="highlight">Cash</span></h2>
+                <p>List your items for free and reach thousands of students on campus.</p>
+            </div>
+            
+            <div class="sellers-grid">
+                <div class="seller-card animate-on-scroll">
+                    <div class="seller-icon">📸</div>
+                    <h3>List Your Item</h3>
+                    <p>Upload photos, set a price, and write a description. It takes just a few minutes.</p>
+                </div>
+                
+                <div class="seller-card animate-on-scroll" style="animation-delay: 0.2s;">
+                    <div class="seller-icon">📢</div>
+                    <h3>Reach Students</h3>
+                    <p>Your listing is visible to all verified students at your university. No fees, no commissions.</p>
+                </div>
+                
+                <div class="seller-card animate-on-scroll" style="animation-delay: 0.4s;">
+                    <div class="seller-icon">💬</div>
+                    <h3>Connect with Buyers</h3>
+                    <p>Respond to messages, negotiate prices, and arrange meetups through our chat system.</p>
+                </div>
+                
+                <div class="seller-card animate-on-scroll" style="animation-delay: 0.6s;">
+                    <div class="seller-icon">💰</div>
+                    <h3>Get Paid</h3>
+                    <p>Complete the transaction on campus and get paid. Simple, safe, and hassle-free.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- SAFETY & TRUST -->
+    <!-- ======================================== -->
+    <section class="safety-section">
+        <div class="container-custom">
+            <div class="section-header">
+                <span class="section-tag">Safety & Trust</span>
+                <h2>Your Safety is Our <span class="highlight">Priority</span></h2>
+                <p>We've built features to keep our community safe and trustworthy.</p>
+            </div>
+            
+            <div class="safety-grid">
+                <div class="safety-card animate-on-scroll">
+                    <div class="safety-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3>Verified Students Only</h3>
+                    <p>Every user must verify their student identity. No fake profiles or scammers.</p>
+                </div>
+                
+                <div class="safety-card animate-on-scroll" style="animation-delay: 0.2s;">
+                    <div class="safety-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure Messaging</h3>
+                    <p>All communication happens within our platform. No phone numbers or personal info shared.</p>
+                </div>
+                
+                <div class="safety-card animate-on-scroll" style="animation-delay: 0.4s;">
+                    <div class="safety-icon">
+                        <i class="fas fa-map-pin"></i>
+                    </div>
+                    <h3>On-Campus Meetups</h3>
+                    <p>Meet in safe, public locations on campus. We encourage university-approved meeting spots.</p>
+                </div>
+                
+                <div class="safety-card animate-on-scroll" style="animation-delay: 0.6s;">
+                    <div class="safety-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Rating & Reviews</h3>
+                    <p>See reviews from other students before you buy or sell. Build trust through transparency.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- TESTIMONIALS -->
+    <!-- ======================================== -->
+    <section class="testimonials-section">
+        <div class="container-custom">
+            <div class="section-header">
+                <span class="section-tag">Student Stories</span>
+                <h2>What Students Are <span class="highlight">Saying</span></h2>
+                <p>Hear from students who've saved money and earned extra cash on Relov.</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "I saved over ₦50,000 on textbooks this semester. Relov is a game-changer for students!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">CM</div>
+                        <div>
+                            <p class="author-name">Chioma M.</p>
+                            <p class="author-uni">University of Lagos</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card animate-on-scroll" style="animation-delay: 0.2s;">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "I sold my old furniture in 2 days and made enough to fund my internship commute. Highly recommend!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">TO</div>
+                        <div>
+                            <p class="author-name">Tunde O.</p>
+                            <p class="author-uni">Pan-Atlantic University</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card animate-on-scroll" style="animation-delay: 0.4s;">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "The verification process made me feel safe. I've bought and sold 5 items already!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">FA</div>
+                        <div>
+                            <p class="author-name">Folake A.</p>
+                            <p class="author-uni">Covenant University</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- CTA SECTION -->
+    <!-- ======================================== -->
+    <section class="cta-section">
+        <div class="bg-pattern"></div>
+        <div class="container-custom relative">
+            <div class="cta-content">
+                <span class="cta-badge">Start Today</span>
+                <h2 class="cta-title">Ready to Get Started?</h2>
+                <p class="cta-subtitle">
+                    Join thousands of students already saving and earning on Relov.
+                </p>
+                <div class="cta-buttons">
+                    <a href="register.html" class="btn-white btn-lg group">
+                        Create Your Account
+                        <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 smooth"></i>
+                    </a>
+                    <a href="marketplace.html" class="btn-outline-white btn-lg">
+                        Browse Marketplace
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- FOOTER -->
+    <!-- ======================================== -->
+    <footer class="footer">
+        <div class="container-custom">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <span class="footer-logo-icon">R</span>
+                        Relov
+                    </a>
+                    <p class="footer-tagline">Things Worth Loving Again.</p>
+                    <p class="footer-description">Student-only marketplace for trusted buying and selling.</p>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="marketplace.html">Marketplace</a></li>
+                        <li><a href="universities.html">Universities</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="help.html">Help Center</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="report.html">Report Issue</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Get in Touch</h4>
+                    <ul class="footer-links">
+                        <li class="footer-contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>support@relov.com</span>
+                        </li>
+                        <li class="footer-contact-item">
+                            <i class="fas fa-map-pin"></i>
+                            <span>Lagos, Nigeria</span>
+                        </li>
+                        <li class="footer-contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+234 (800) RELOV-01</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2024 Relov. All rights reserved. Made with <span class="heart">❤️</span> for Nigerian students.
+                </p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ======================================== -->
+    <!-- JAVASCRIPT -->
+    <!-- ======================================== -->
+    <script src="js/main.js"></script>
+    <script src="js/how-it-works.js"></script>
+
+</body>
+</html>

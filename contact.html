@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Relov</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="css/components/navbar.css" />
+    <link rel="stylesheet" href="css/components/footer.css" />
+    <link rel="stylesheet" href="css/components/cards.css" />
+    <link rel="stylesheet" href="css/components/buttons.css" />
+    
+    <!-- Page Specific -->
+    <link rel="stylesheet" href="css/pages/contact.css" />
+</head>
+<body>
+
+    <!-- ======================================== -->
+    <!-- NAVBAR -->
+    <!-- ======================================== -->
+    <nav class="navbar" id="navbar">
+        <div class="container-custom flex items-center justify-between">
+            <a href="index.html" class="navbar-logo">
+                <span class="navbar-logo-icon">R</span>
+                Relov
+            </a>
+            
+            <div class="navbar-links">
+                <a href="marketplace.html" class="navbar-link">Marketplace</a>
+                <a href="universities.html" class="navbar-link">Universities</a>
+                <a href="how-it-works.html" class="navbar-link">How It Works</a>
+                <a href="about.html" class="navbar-link">About</a>
+                <a href="faq.html" class="navbar-link">FAQ</a>
+            </div>
+            
+            <div class="navbar-actions">
+                <button class="navbar-search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="login.html" class="navbar-login-btn">Login</a>
+                <a href="register.html" class="navbar-signup-btn">
+                    Sign Up
+                    <i class="fas fa-chevron-down text-xs"></i>
+                </a>
+            </div>
+            
+            <button class="navbar-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <div class="container-custom">
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="marketplace.html" class="mobile-menu-link">Marketplace</a>
+                <a href="universities.html" class="mobile-menu-link">Universities</a>
+                <a href="how-it-works.html" class="mobile-menu-link">How It Works</a>
+                <a href="about.html" class="mobile-menu-link">About</a>
+                <a href="faq.html" class="mobile-menu-link">FAQ</a>
+                <hr class="mobile-menu-divider" />
+                <a href="login.html" class="mobile-menu-link">Login</a>
+                <a href="register.html" class="mobile-menu-signup">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ======================================== -->
+    <!-- PAGE HEADER -->
+    <!-- ======================================== -->
+    <section class="contact-header">
+        <div class="container-custom">
+            <div class="header-content">
+                <span class="header-badge"><i class="fas fa-comment-dots"></i> Get in Touch</span>
+                <h1 class="header-title">
+                    We'd Love to <span class="highlight">Hear From You</span>
+                </h1>
+                <p class="header-subtitle">
+                    Have questions, feedback, or suggestions? Reach out to us anytime.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- CONTACT SECTION -->
+    <!-- ======================================== -->
+    <section class="contact-section">
+        <div class="container-custom">
+            <div class="contact-grid">
+                
+                <!-- ===== CONTACT INFO ===== -->
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    <p class="contact-info-text">
+                        We're here to help! Choose the best way to reach us and we'll get back to you as soon as possible.
+                    </p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-details">
+                                <h4>Email Us</h4>
+                                <p>support@relov.com</p>
+                                <span class="method-response">Response within 24 hours</span>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="method-details">
+                                <h4>Call Us</h4>
+                                <p>+234 (800) RELOV-01</p>
+                                <span class="method-response">Mon - Fri, 9am - 6pm</span>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-map-pin"></i>
+                            </div>
+                            <div class="method-details">
+                                <h4>Visit Us</h4>
+                                <p>Lagos, Nigeria</p>
+                                <span class="method-response">By appointment only</span>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="method-details">
+                                <h4>Support Hours</h4>
+                                <p>24/7 Support</p>
+                                <span class="method-response">We're always here for you</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div class="social-links">
+                        <h4>Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ===== CONTACT FORM ===== -->
+                <div class="contact-form-wrapper">
+                    <h2>Send Us a Message</h2>
+                    <p class="form-subtitle">We'll get back to you within 24 hours</p>
+                    
+                    <form class="contact-form" id="contactForm" onsubmit="handleContactForm(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label required">Full Name</label>
+                                <div class="input-icon-group">
+                                    <i class="fas fa-user input-icon"></i>
+                                    <input type="text" class="form-input" placeholder="John Doe" id="contactName" required />
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label required">Email Address</label>
+                                <div class="input-icon-group">
+                                    <i class="fas fa-envelope input-icon"></i>
+                                    <input type="email" class="form-input" placeholder="student@university.edu" id="contactEmail" required />
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label required">Subject</label>
+                            <div class="input-icon-group">
+                                <i class="fas fa-tag input-icon"></i>
+                                <select class="form-select" id="contactSubject" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="support">Technical Support</option>
+                                    <option value="feedback">Feedback</option>
+                                    <option value="report">Report Issue</option>
+                                    <option value="partnership">Partnership</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label required">Message</label>
+                            <div class="input-icon-group">
+                                <i class="fas fa-pencil-alt input-icon" style="top: 1rem;"></i>
+                                <textarea class="form-textarea" placeholder="Tell us how we can help you..." id="contactMessage" rows="5" required></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="contactConsent" required />
+                                <span>I consent to Relov contacting me about my inquiry</span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary btn-full btn-lg" id="contactBtn">
+                            <span id="contactBtnText">Send Message</span>
+                            <i class="fas fa-arrow-right" id="contactBtnIcon"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- FAQ PREVIEW -->
+    <!-- ======================================== -->
+    <section class="faq-preview-section">
+        <div class="container-custom">
+            <div class="faq-preview-content">
+                <div class="faq-preview-icon">
+                    <i class="fas fa-question-circle"></i>
+                </div>
+                <h2>Quick Answers</h2>
+                <p>Check out our FAQ page for answers to common questions.</p>
+                <a href="faq.html" class="btn-outline">
+                    View FAQ
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- MAP / LOCATION -->
+    <!-- ======================================== -->
+    <section class="location-section">
+        <div class="container-custom">
+            <div class="section-header">
+                <span class="section-tag">Our Location</span>
+                <h2>Find Us <span class="highlight">on Campus</span></h2>
+                <p>We're building communities across Nigerian universities.</p>
+            </div>
+            
+            <div class="location-grid">
+                <div class="location-card">
+                    <div class="location-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>Pan-Atlantic University</h3>
+                    <p>Lagos, Nigeria</p>
+                    <span class="location-status active">Active</span>
+                </div>
+                
+                <div class="location-card">
+                    <div class="location-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>Covenant University</h3>
+                    <p>Ota, Ogun State</p>
+                    <span class="location-status coming-soon">Coming Soon</span>
+                </div>
+                
+                <div class="location-card">
+                    <div class="location-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>University of Lagos</h3>
+                    <p>Akoka, Lagos</p>
+                    <span class="location-status coming-soon">Coming Soon</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- CTA SECTION -->
+    <!-- ======================================== -->
+    <section class="cta-section">
+        <div class="bg-pattern"></div>
+        <div class="container-custom relative">
+            <div class="cta-content">
+                <span class="cta-badge">Join Us</span>
+                <h2 class="cta-title">Ready to <span class="highlight">Get Started?</span></h2>
+                <p class="cta-subtitle">
+                    Join thousands of students already saving and earning on Relov.
+                </p>
+                <div class="cta-buttons">
+                    <a href="register.html" class="btn-white btn-lg group">
+                        Create Your Account
+                        <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 smooth"></i>
+                    </a>
+                    <a href="marketplace.html" class="btn-outline-white btn-lg">
+                        Browse Marketplace
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- FOOTER -->
+    <!-- ======================================== -->
+    <footer class="footer">
+        <div class="container-custom">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <span class="footer-logo-icon">R</span>
+                        Relov
+                    </a>
+                    <p class="footer-tagline">Things Worth Loving Again.</p>
+                    <p class="footer-description">Student-only marketplace for trusted buying and selling.</p>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="marketplace.html">Marketplace</a></li>
+                        <li><a href="universities.html">Universities</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="help.html">Help Center</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="report.html">Report Issue</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Get in Touch</h4>
+                    <ul class="footer-links">
+                        <li class="footer-contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>support@relov.com</span>
+                        </li>
+                        <li class="footer-contact-item">
+                            <i class="fas fa-map-pin"></i>
+                            <span>Lagos, Nigeria</span>
+                        </li>
+                        <li class="footer-contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+234 (800) RELOV-01</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2024 Relov. All rights reserved. Made with <span class="heart">❤️</span> for Nigerian students.
+                </p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ======================================== -->
+    <!-- SUCCESS MODAL -->
+    <!-- ======================================== -->
+    <div class="modal" id="successModal">
+        <div class="modal-overlay" onclick="closeSuccessModal()"></div>
+        <div class="modal-content success-modal">
+            <button class="modal-close" onclick="closeSuccessModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2 class="modal-title">Message Sent! 🎉</h2>
+            <p class="modal-subtitle">
+                Thank you for reaching out! We've received your message and will get back to you within 24 hours.
+            </p>
+            <button class="btn-primary" onclick="closeSuccessModal()">
+                Got It
+            </button>
+        </div>
+    </div>
+
+
+    <!-- ======================================== -->
+    <!-- JAVASCRIPT -->
+    <!-- ======================================== -->
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+
+</body>
+</html>

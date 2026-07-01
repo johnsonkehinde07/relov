@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Relov - Things Worth Loving Again</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="css/components/navbar.css" />
+    <link rel="stylesheet" href="css/components/footer.css" />
+    <link rel="stylesheet" href="css/components/cards.css" />
+    <link rel="stylesheet" href="css/components/buttons.css" />
+    
+    <!-- Page Specific -->
+    <link rel="stylesheet" href="css/pages/about.css" />
+</head>
+<body>
+
+    <!-- ======================================== -->
+    <!-- NAVBAR -->
+    <!-- ======================================== -->
+    <nav class="navbar" id="navbar">
+        <div class="container-custom flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="navbar-logo">
+                <span class="navbar-logo-icon">R</span>
+                Relov
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <div class="navbar-links">
+                <a href="marketplace.html" class="navbar-link">Marketplace</a>
+                <a href="universities.html" class="navbar-link">Universities</a>
+                <a href="how-it-works.html" class="navbar-link">How It Works</a>
+                <a href="about.html" class="navbar-link active">About</a>
+                <a href="faq.html" class="navbar-link">FAQ</a>
+            </div>
+            
+            <!-- Desktop Actions -->
+            <div class="navbar-actions">
+                <button class="navbar-search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="login.html" class="navbar-login-btn">Login</a>
+                <a href="register.html" class="navbar-signup-btn">
+                    Sign Up
+                    <i class="fas fa-chevron-down text-xs"></i>
+                </a>
+            </div>
+            
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="container-custom">
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="marketplace.html" class="mobile-menu-link">Marketplace</a>
+                <a href="universities.html" class="mobile-menu-link">Universities</a>
+                <a href="how-it-works.html" class="mobile-menu-link">How It Works</a>
+                <a href="about.html" class="mobile-menu-link">About</a>
+                <a href="faq.html" class="mobile-menu-link">FAQ</a>
+                <hr class="mobile-menu-divider" />
+                <a href="login.html" class="mobile-menu-link">Login</a>
+                <a href="register.html" class="mobile-menu-signup">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ======================================== -->
+    <!-- PAGE HEADER / HERO -->
+    <!-- ======================================== -->
+    <section class="about-hero">
+        <div class="container-custom">
+            <div class="about-hero-content">
+                <span class="about-hero-badge">About Us</span>
+                <h1 class="about-hero-title">
+                    Building a Better<br />
+                    <span class="highlight">Student Community</span>
+                </h1>
+                <p class="about-hero-subtitle">
+                    We're on a mission to help students save money, earn extra income, 
+                    and build stronger campus communities through trusted peer-to-peer exchange.
+                </p>
+                <div class="about-hero-stats">
+                    <div class="about-hero-stat">
+                        <span class="stat-number">50K+</span>
+                        <span class="stat-label">Students</span>
+                    </div>
+                    <div class="about-hero-stat">
+                        <span class="stat-number">8</span>
+                        <span class="stat-label">Universities</span>
+                    </div>
+                    <div class="about-hero-stat">
+                        <span class="stat-number">20K+</span>
+                        <span class="stat-label">Items Sold</span>
+                    </div>
+                    <div class="about-hero-stat">
+                        <span class="stat-number">$2M+</span>
+                        <span class="stat-label">Saved by Students</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- OUR MISSION -->
+    <!-- ======================================== -->
+    <section class="mission-section">
+        <div class="container-custom">
+            <div class="mission-grid">
+                <div class="mission-content">
+                    <span class="section-tag">Our Mission</span>
+                    <h2 class="mission-title">Empowering Students Through <span class="highlight">Trusted Exchange</span></h2>
+                    <p class="mission-text">
+                        Every student deserves access to affordable, quality items without breaking the bank. 
+                        We created Relov to solve the challenges students face when buying and selling on campus.
+                    </p>
+                    <div class="mission-values">
+                        <div class="mission-value">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h4>Trust & Safety</h4>
+                                <p>Every user is verified as a student, creating a safe community.</p>
+                            </div>
+                        </div>
+                        <div class="mission-value">
+                            <i class="fas fa-hand-holding-heart"></i>
+                            <div>
+                                <h4>Community First</h4>
+                                <p>Building stronger campus connections through local exchange.</p>
+                            </div>
+                        </div>
+                        <div class="mission-value">
+                            <i class="fas fa-leaf"></i>
+                            <div>
+                                <h4>Sustainability</h4>
+                                <p>Giving pre-owned items a second life and reducing waste.</p>
+                            </div>
+                        </div>
+                        <div class="mission-value">
+                            <i class="fas fa-coins"></i>
+                            <div>
+                                <h4>Affordability</h4>
+                                <p>Helping students save money and earn extra income.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mission-image">
+                    <div class="mission-image-placeholder">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Student Community</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- OUR STORY -->
+    <!-- ======================================== -->
+    <section class="story-section">
+        <div class="container-custom">
+            <div class="story-grid">
+                <div class="story-image">
+                    <div class="story-image-placeholder">
+                        <i class="fas fa-rocket"></i>
+                        <span>Our Journey</span>
+                    </div>
+                </div>
+                <div class="story-content">
+                    <span class="section-tag">Our Story</span>
+                    <h2 class="story-title">From a Dorm Room <span class="highlight">to a Campus Movement</span></h2>
+                    <div class="story-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-year">2022</span>
+                                <h4>The Idea</h4>
+                                <p>Founded by students who struggled to find affordable furniture and textbooks on campus.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-year">2023</span>
+                                <h4>First Launch</h4>
+                                <p>Launched at 3 universities with 5,000+ students joining in the first month.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-year">2024</span>
+                                <h4>Growing Fast</h4>
+                                <p>Expanded to 8 universities with 50,000+ students and 20,000+ items listed.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-year">2025+</span>
+                                <h4>The Future</h4>
+                                <p>Expanding to 50+ universities and building the largest student marketplace.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- TEAM SECTION -->
+    <!-- ======================================== -->
+    <section class="team-section">
+        <div class="container-custom">
+            <div class="section-header">
+                <span class="section-tag">Our Team</span>
+                <h2>The People Behind <span class="highlight">Relov</span></h2>
+                <p>Passionate students and educators building the future of campus commerce.</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar bg-gradient-to-br from-blue-500 to-blue-600">
+                        <span>AK</span>
+                    </div>
+                    <h3 class="team-name">Alex Kim</h3>
+                    <p class="team-role">Co-Founder & CEO</p>
+                    <p class="team-bio">Former student body president who saw the need for better campus exchange.</p>
+                    <div class="team-socials">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar bg-gradient-to-br from-purple-500 to-purple-600">
+                        <span>SR</span>
+                    </div>
+                    <h3 class="team-name">Sarah Rodriguez</h3>
+                    <p class="team-role">Co-Founder & COO</p>
+                    <p class="team-bio">Passionate about sustainability and building community-driven solutions.</p>
+                    <div class="team-socials">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar bg-gradient-to-br from-emerald-500 to-emerald-600">
+                        <span>MT</span>
+                    </div>
+                    <h3 class="team-name">Marcus Thompson</h3>
+                    <p class="team-role">CTO</p>
+                    <p class="team-bio">Computer science grad building secure, scalable platforms for student communities.</p>
+                    <div class="team-socials">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar bg-gradient-to-br from-rose-500 to-rose-600">
+                        <span>JL</span>
+                    </div>
+                    <h3 class="team-name">Jessica Liu</h3>
+                    <p class="team-role">Head of Community</p>
+                    <p class="team-bio">Building campus ambassador programs and fostering student connections.</p>
+                    <div class="team-socials">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- VALUES SECTION -->
+    <!-- ======================================== -->
+    <section class="values-section">
+        <div class="container-custom">
+            <div class="section-header">
+                <span class="section-tag">Our Values</span>
+                <h2>What Guides <span class="highlight">Everything We Do</span></h2>
+                <p>These core principles drive our decisions and shape our community.</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="value-title">Student First</h3>
+                    <p class="value-description">
+                        Every decision we make puts students' needs first. We build for students, by students.
+                    </p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="value-title">Trust & Transparency</h3>
+                    <p class="value-description">
+                        We believe in radical transparency and building trust through verification and accountability.
+                    </p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3 class="value-title">Sustainability</h3>
+                    <p class="value-description">
+                        Reducing waste by giving items a second life and promoting conscious consumption.
+                    </p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="value-title">Community Impact</h3>
+                    <p class="value-description">
+                        Building stronger campus communities through meaningful connections and shared value.
+                    </p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="value-title">Innovation</h3>
+                    <p class="value-description">
+                        Constantly improving and finding better ways to serve our student community.
+                    </p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="value-title">Inclusivity</h3>
+                    <p class="value-description">
+                        Creating a welcoming space where every student feels valued and included.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- IMPACT SECTION -->
+    <!-- ======================================== -->
+    <section class="impact-section">
+        <div class="container-custom">
+            <div class="impact-grid">
+                <div class="impact-content">
+                    <span class="section-tag">Our Impact</span>
+                    <h2 class="impact-title">Making a <span class="highlight">Real Difference</span></h2>
+                    <p class="impact-text">
+                        We're proud of what we've achieved together with our student community.
+                    </p>
+                    <div class="impact-stats">
+                        <div class="impact-stat">
+                            <div class="impact-number">$2M+</div>
+                            <div class="impact-label">Saved by Students</div>
+                        </div>
+                        <div class="impact-stat">
+                            <div class="impact-number">50K+</div>
+                            <div class="impact-label">Items Exchanged</div>
+                        </div>
+                        <div class="impact-stat">
+                            <div class="impact-number">98%</div>
+                            <div class="impact-label">Satisfaction Rate</div>
+                        </div>
+                        <div class="impact-stat">
+                            <div class="impact-number">8</div>
+                            <div class="impact-label">University Partners</div>
+                        </div>
+                    </div>
+                    <a href="marketplace.html" class="btn-primary btn-lg">
+                        Join Our Community
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="impact-image">
+                    <div class="impact-image-placeholder">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Our Growth</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- CTA SECTION -->
+    <!-- ======================================== -->
+    <section class="cta-section">
+        <div class="bg-pattern"></div>
+        <div class="container-custom relative">
+            <div class="cta-content">
+                <span class="cta-badge">Join Us</span>
+                <h2 class="cta-title">Be Part of Something <span class="highlight">Bigger</span></h2>
+                <p class="cta-subtitle">
+                    Whether you're buying, selling, or just exploring — there's a place for you in the Relov community.
+                </p>
+                <div class="cta-buttons">
+                    <a href="register.html" class="btn-white btn-lg group">
+                        Get Started Free
+                        <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 smooth"></i>
+                    </a>
+                    <a href="contact.html" class="btn-outline-white btn-lg">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- FOOTER -->
+    <!-- ======================================== -->
+    <footer class="footer">
+        <div class="container-custom">
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <span class="footer-logo-icon">R</span>
+                        Relov
+                    </a>
+                    <p class="footer-tagline">Things Worth Loving Again.</p>
+                    <p class="footer-description">Student-only marketplace for trusted buying and selling.</p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="marketplace.html">Marketplace</a></li>
+                        <li><a href="universities.html">Universities</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Support -->
+                <div>
+                    <h4 class="footer-heading">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="help.html">Help Center</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="report.html">Report Issue</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h4 class="footer-heading">Get in Touch</h4>
+                    <ul class="footer-links">
+                        <li class="footer-contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>support@relov.com</span>
+                        </li>
+                        <li class="footer-contact-item">
+                            <i class="fas fa-map-pin"></i>
+                            <span>Student communities nationwide</span>
+                        </li>
+                        <li class="footer-contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (800) RELOV-01</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom -->
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2024 Relov. All rights reserved. Made with <span class="heart">❤️</span> for students.
+                </p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ======================================== -->
+    <!-- JAVASCRIPT -->
+    <!-- ======================================== -->
+    <script src="js/main.js"></script>
+    <script src="js/about.js"></script>
+
+</body>
+</html>

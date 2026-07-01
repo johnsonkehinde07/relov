@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marketplace - Relov</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="css/components/navbar.css" />
+    <link rel="stylesheet" href="css/components/footer.css" />
+    <link rel="stylesheet" href="css/components/cards.css" />
+    <link rel="stylesheet" href="css/components/buttons.css" />
+    
+    <!-- Page Specific -->
+    <link rel="stylesheet" href="css/pages/marketplace.css" />
+</head>
+<body>
+
+    <!-- ======================================== -->
+    <!-- NAVBAR -->
+    <!-- ======================================== -->
+    <nav class="navbar" id="navbar">
+        <div class="container-custom flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="navbar-logo">
+                <span class="navbar-logo-icon">R</span>
+                Relov
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <div class="navbar-links">
+                <a href="marketplace.html" class="navbar-link active">Marketplace</a>
+                <a href="universities.html" class="navbar-link">Universities</a>
+                <a href="how-it-works.html" class="navbar-link">How It Works</a>
+                <a href="about.html" class="navbar-link">About</a>
+                <a href="faq.html" class="navbar-link">FAQ</a>
+            </div>
+            
+            <!-- Desktop Actions -->
+            <div class="navbar-actions">
+                <button class="navbar-search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="login.html" class="navbar-login-btn">Login</a>
+                <a href="register.html" class="navbar-signup-btn">
+                    Sign Up
+                    <i class="fas fa-chevron-down text-xs"></i>
+                </a>
+            </div>
+            
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="container-custom">
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="marketplace.html" class="mobile-menu-link">Marketplace</a>
+                <a href="universities.html" class="mobile-menu-link">Universities</a>
+                <a href="how-it-works.html" class="mobile-menu-link">How It Works</a>
+                <a href="about.html" class="mobile-menu-link">About</a>
+                <a href="faq.html" class="mobile-menu-link">FAQ</a>
+                <hr class="mobile-menu-divider" />
+                <a href="login.html" class="mobile-menu-link">Login</a>
+                <a href="register.html" class="mobile-menu-signup">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ======================================== -->
+    <!-- PAGE HEADER -->
+    <!-- ======================================== -->
+    <section class="marketplace-header">
+        <div class="container-custom">
+            <div class="marketplace-header-content">
+                <h1 class="marketplace-title">
+                    Find <span class="highlight">Great Deals</span> on Campus
+                </h1>
+                <p class="marketplace-subtitle">
+                    Browse thousands of items from verified students at your university
+                </p>
+                <div class="marketplace-search">
+                    <div class="search-bar">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" class="search-input" placeholder="Search for furniture, textbooks, electronics..." id="searchInput" />
+                        <button class="search-btn" onclick="performSearch()">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- MAIN MARKETPLACE -->
+    <!-- ======================================== -->
+    <section class="marketplace-main">
+        <div class="container-custom">
+            <div class="marketplace-grid">
+                
+                <!-- ===== SIDEBAR FILTERS ===== -->
+                <aside class="marketplace-sidebar" id="sidebar">
+                    <div class="sidebar-header">
+                        <h3>Filters</h3>
+                        <button class="clear-filters" onclick="clearFilters()">Clear All</button>
+                    </div>
+                    
+                    <!-- Mobile Filter Toggle -->
+                    <button class="filter-toggle" onclick="toggleFilters()">
+                        <i class="fas fa-sliders-h"></i>
+                        Filters
+                    </button>
+                    
+                    <div class="filters-content" id="filtersContent">
+                        <!-- Category Filter -->
+                        <div class="filter-group">
+                            <h4 class="filter-label">Category</h4>
+                            <div class="filter-options">
+                                <label class="filter-option">
+                                    <input type="checkbox" value="furniture" onchange="applyFilter()" />
+                                    <span>Furniture</span>
+                                    <span class="filter-count">(2,341)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="electronics" onchange="applyFilter()" />
+                                    <span>Electronics</span>
+                                    <span class="filter-count">(1,892)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="books" onchange="applyFilter()" />
+                                    <span>Books</span>
+                                    <span class="filter-count">(3,456)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="fashion" onchange="applyFilter()" />
+                                    <span>Fashion</span>
+                                    <span class="filter-count">(1,234)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="kitchen" onchange="applyFilter()" />
+                                    <span>Kitchen</span>
+                                    <span class="filter-count">(876)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="room-essentials" onchange="applyFilter()" />
+                                    <span>Room Essentials</span>
+                                    <span class="filter-count">(654)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="services" onchange="applyFilter()" />
+                                    <span>Services</span>
+                                    <span class="filter-count">(432)</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Price Range Filter -->
+                        <div class="filter-group">
+                            <h4 class="filter-label">Price Range</h4>
+                            <div class="price-range">
+                                <div class="price-inputs">
+                                    <div class="price-input-group">
+                                        <span class="price-currency">$</span>
+                                        <input type="number" class="price-input" placeholder="Min" id="priceMin" onchange="applyFilter()" />
+                                    </div>
+                                    <span class="price-separator">—</span>
+                                    <div class="price-input-group">
+                                        <span class="price-currency">$</span>
+                                        <input type="number" class="price-input" placeholder="Max" id="priceMax" onchange="applyFilter()" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Condition Filter -->
+                        <div class="filter-group">
+                            <h4 class="filter-label">Condition</h4>
+                            <div class="filter-options">
+                                <label class="filter-option">
+                                    <input type="radio" name="condition" value="any" checked onchange="applyFilter()" />
+                                    <span>Any</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="radio" name="condition" value="new" onchange="applyFilter()" />
+                                    <span>New</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="radio" name="condition" value="like-new" onchange="applyFilter()" />
+                                    <span>Like New</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="radio" name="condition" value="good" onchange="applyFilter()" />
+                                    <span>Good</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="radio" name="condition" value="fair" onchange="applyFilter()" />
+                                    <span>Fair</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- University Filter -->
+                        <div class="filter-group">
+                            <h4 class="filter-label">University</h4>
+                            <div class="filter-options">
+                                <label class="filter-option">
+                                    <input type="checkbox" value="all" checked onchange="applyFilter()" />
+                                    <span>All Universities</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="uc-berkeley" onchange="applyFilter()" />
+                                    <span>UC Berkeley</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="nyu" onchange="applyFilter()" />
+                                    <span>NYU</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="ut-austin" onchange="applyFilter()" />
+                                    <span>UT Austin</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="stanford" onchange="applyFilter()" />
+                                    <span>Stanford</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Sort Options -->
+                        <div class="filter-group">
+                            <h4 class="filter-label">Sort By</h4>
+                            <div class="filter-options">
+                                <label class="filter-option">
+                                    <input type="radio" name="sort" value="newest" checked onchange="applyFilter()" />
+                                    <span>Newest</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="radio" name="sort" value="popular" onchange="applyFilter()" />
+                                    <span>Popular</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="radio" name="sort" value="price-low" onchange="applyFilter()" />
+                                    <span>Price: Low to High</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="radio" name="sort" value="price-high" onchange="applyFilter()" />
+                                    <span>Price: High to Low</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                
+                <!-- ===== PRODUCT LISTINGS ===== -->
+                <main class="marketplace-products">
+                    <!-- Results Header -->
+                    <div class="results-header">
+                        <div class="results-info">
+                            <span class="results-count" id="resultsCount">Showing 24 results</span>
+                            <span class="results-view">
+                                <button class="view-btn active" onclick="setView('grid')">
+                                    <i class="fas fa-th"></i>
+                                </button>
+                                <button class="view-btn" onclick="setView('list')">
+                                    <i class="fas fa-list"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Grid -->
+                    <div class="products-grid" id="productsGrid">
+                        <!-- Products will be rendered by JavaScript -->
+                    </div>
+                    
+                    <!-- Load More -->
+                    <div class="load-more">
+                        <button class="btn-outline btn-lg" onclick="loadMore()">
+                            Load More
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================== -->
+    <!-- FOOTER -->
+    <!-- ======================================== -->
+    <footer class="footer">
+        <div class="container-custom">
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <span class="footer-logo-icon">R</span>
+                        Relov
+                    </a>
+                    <p class="footer-tagline">Things Worth Loving Again.</p>
+                    <p class="footer-description">Student-only marketplace for trusted buying and selling.</p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="marketplace.html">Marketplace</a></li>
+                        <li><a href="universities.html">Universities</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Support -->
+                <div>
+                    <h4 class="footer-heading">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="help.html">Help Center</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="report.html">Report Issue</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h4 class="footer-heading">Get in Touch</h4>
+                    <ul class="footer-links">
+                        <li class="footer-contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>support@relov.com</span>
+                        </li>
+                        <li class="footer-contact-item">
+                            <i class="fas fa-map-pin"></i>
+                            <span>Student communities nationwide</span>
+                        </li>
+                        <li class="footer-contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (800) RELOV-01</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom -->
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2024 Relov. All rights reserved. Made with <span class="heart">❤️</span> for students.
+                </p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ======================================== -->
+    <!-- JAVASCRIPT -->
+    <!-- ======================================== -->
+    <script src="js/main.js"></script>
+    <script src="js/marketplace.js"></script>
+
+</body>
+</html>
